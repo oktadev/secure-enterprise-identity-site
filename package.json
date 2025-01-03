@@ -1,0 +1,19 @@
+{
+  "name": "okta-secure-integrations-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "eleventy": "eleventy",
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "OktaDev <dev-advocacy@okta.com>",
+  "license": "Apache-2.0",
+  "description": "Secure integrations with Okta",
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

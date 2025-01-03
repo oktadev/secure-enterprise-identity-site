@@ -1,0 +1,128 @@
+/* Defaults */
+:root {
+	--font-family: "Aeonik", helvetica, arial, sans-serif;
+  --font-size-normal: 1.05rem;
+  --font-size-small: 0.8rem;
+  --font-size-large: 1.3rem;
+}
+
+/* Theme colors */
+:root {
+	--color-carbon: #191919;
+	--color-slate: #6B665F;
+	--color-gravel: #AFABA1;
+  --color-sand: #E8DCC7;
+  --color-cream: #F6F1E7;
+  --color-snow: #FFFEFA;
+  --color-cobalt: #1A31A9;
+  --color-sky: #3F59E4;
+  --color-cloud: #B6C9FF;
+  --color-ocean: #096256;
+  --color-seafoam: #4CB7A3;
+  --color-turquoise: #B1E4DE;
+  --color-white: #fff;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-carbon);
+	--text-color-link: var(--color-carbon);
+  --text-color-hover: var(--color-sky);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+    --text-color: var(--background-color);
+		--text-color-link: #1493fb;
+		--background-color: var(--color-carbon);
+	}
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+  font-size: var(--font-size-normal);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img {
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:hover {
+	color: var(--text-color-link-hover);
+}
+
+header,
+footer {
+  display: flex;
+	padding: 1rem;
+  background-color: var(--color-carbon);
+  color: var(--color-white);
+}
+
+footer {
+  flex-direction: column;
+  align-items: center;
+}
+
+header a[href], footer a[href] {
+  color: var(--color-white);
+}
+
+main {
+  padding: 1rem;
+  font-size: var(--font-size-large);
+
+}
+main:first-child {
+	margin-top: 0;
+}
+
+ul.social {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul.social > li+li {
+  margin-left: 3rem;
+}
+
+li i {
+  width: 100%;
+  height: auto;
+}
+
+p.copy {
+  font-size: var(--font-size-small);
+}
