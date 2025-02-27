@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sii-cool-light-gray: #E7ECEF;
+  /* --color-sii-warm-light-gray: #d9dcd6; */
+  /* --color-sii-warm-med-gray: #8B8C89; */
+  --color-sii-cool-light-blue: #A3CEF1;
+  /* --color-sii-warm-light-blue: #81C3D7; */
+  --color-sii-med-blue: #3A7CA5;
+  --color-sii-med-dark-blue: #2F6690;
+  --color-sii-cool-dark-blue: #274C77;
+  /* --color-sii-warm-dark-blue: #16425B; */
+  --color-sii-darkest-blue: #1b263b;
+  --color-sii-cyan: #34b6ec;
+  --color-sii-cyan-light: #7acff3;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+
+/* Palette https://coolors.co/palette/2f6690-3a7ca5-d9dcd6-16425b-81c3d7 */
+/* https://coolors.co/palette/e7ecef-274c77-6096ba-a3cef1-8b8c89 */
