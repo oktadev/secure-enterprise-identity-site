@@ -1,21 +1,60 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Okta Secure Integrations</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/img/favicon.svg" sizes="any" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/index.css">
-</head>
-<body>
-  {% include "header.html" %}
+  <html lang="en" data-theme="light">
+    <head>
+      <meta charset="utf-8">
+      <title>Secure Identity Integrations</title>
+      <base href="/">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" href="/img/logo.svg" sizes="any" type="image/svg+xml">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">      <link rel="stylesheet" href="/css/index.css">
+      <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+      <link rel="stylesheet" href="/css/tailwind.css">
+      <script>
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.dataset.theme = 'dark';
+        } else {
+            document.documentElement.dataset.theme = 'light';
+        }
+    </script>
+    </head>
+    <body class="bg-white dark:bg-sii-darkest-blue dark:text-sii-cool-light-gray flex flex-col min-h-screen">
+      {% include "partials/_header.njk" %}
+      <main class="m-6 grow">
+        <section class="my-12 sm:w-4/5 md:w-3/5 lg:w-1/2">
+          <h1 class="text-6xl text-sii-cool-dark-blue dark:text-sii-cyan">Secure Identity Integrations</h1>
+          <p class="mt-3 lg:w-4/5">Make your app a Secure Identity Integration by implementing five core features with modern, secure open standards. Grow trust in your app and encourage enterprise customer adoption of your app by staying ahead of identity-based threats.</p>
+        </section>
+        {% include "partials/_integrations.njk" %}
+      </main>
+      {% include "partials/_footer.njk" %}
 
-  <main>
-    <p>Secure integration content</p>
-  </main>
+      <script>
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const initialTheme = document.documentElement.dataset.theme;
 
-  {% include "footer.html" %}
-</body>
+        if (initialTheme === 'dark') {
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', function() {
+          const theme = document.documentElement.dataset.theme;
+
+          themeToggleDarkIcon.classList.toggle('hidden');
+          themeToggleLightIcon.classList.toggle('hidden');
+
+          if (theme === 'light') {
+            document.documentElement.dataset.theme = 'dark';
+          } else {
+            document.documentElement.dataset.theme = 'light';
+          }
+        });
+      </script>
+    </body>
 </html>
 
