@@ -5,10 +5,6 @@ export default async function(eleventyConfig) {
     "./public/": "/"
   });
 
-  eleventyConfig.addCollection("integrations", (collectionsApi) => {
-    return collectionsApi.getAll().sort((a,b) => a.data.order > b.data.order)
-  });
-
   eleventyConfig.addPlugin(HtmlBasePlugin);
 };
 

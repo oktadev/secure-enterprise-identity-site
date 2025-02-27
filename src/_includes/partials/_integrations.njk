@@ -1,5 +1,5 @@
 <div class="mt-6 flex flex-row justify-start flex-wrap gap-10 lg:gap-8">
-  {%- for item in collections.integration -%}
+  {%- for item in collections.integration|sort(attribute='data.order') -%}
     <section class="md:w-2/5 lg:w-1/5 xl:w-1/6 dark:text-color-white">
       <div class="">
         <h2 class="text-sii-cool-dark-blue dark:text-sii-cyan-light text-3xl">{{ item.data.title }}</h2>
