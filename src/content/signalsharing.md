@@ -3,6 +3,9 @@ tags: integration
 title: Risk Signal Sharing
 fragment: shared-signals
 order: 4
+workshop_url: /#
+podcast_url: /#
+standards_url: /#
 ---
 
 The Shared Signals Framework provides a virtual security alert board for apps and enterprises to both raise the alarm to other apps and to react to alert notifications.

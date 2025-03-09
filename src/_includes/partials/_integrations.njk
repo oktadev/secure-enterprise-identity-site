@@ -4,6 +4,11 @@
       <div class="">
         <h2 class="text-sii-cool-dark-blue dark:text-sii-cyan-light text-3xl">{{ item.data.title }}</h2>
       </div>
+      <div>
+        <a href={{ item.data.workshop_url}}>Workshop</a> |
+        <a href={{ item.data.podcast_url}}>Podcast</a> |
+        <a href={{ item.data.standards_url}}>Standards</a>
+      </div>
       <p class="md:mt-2">{{item.content | safe }}</p>
     </section>
   {%- endfor -%}

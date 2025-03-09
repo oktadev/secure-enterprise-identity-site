@@ -3,6 +3,9 @@ tags: integration
 title: Session Termination
 fragment: session-termination
 order: 5
+workshop_url: /#
+podcast_url: /#
+standards_url: /#
 ---
 
 Session termination allows administrators of your customer's central user store to sign users out of apps managed by the central user store. Your app gets an event to end the user's authenticated session.
