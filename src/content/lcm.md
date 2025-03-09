@@ -5,4 +5,5 @@ fragment: lcm
 order: 2
 ---
 
-Synchronize new and updated user account information between your app and a central user directory. When a user's profile changes in the central user directory, your app gets the changes. When a user's profile changes in your app, it's reported to the central user directory.
+Synchronize new and updated user account information between your app and a central user directory. Your app gets the changes when a user's profile is updated in the central user directory and vice versa. 
+Automate the entire lifecycle of user onboarding, updates, and offboarding. Reduce the complexity your app adds to your enterprise customers' ecosystems.
