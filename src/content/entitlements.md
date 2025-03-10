@@ -8,4 +8,4 @@ podcast_url: /#
 standards_url: /#
 ---
 
-Synchronize the user roles and entitlements defined in your app to a central user directory so that your customer admins can manage their users centrally.
+What roles have you assigned to users in your app? What permissions do they have? Define and synchronize access management objects ("entitlements") between your app and a central user store. Extend your lifecycle management functionality to include entitlements and synchronize your users' roles and permissions as well.

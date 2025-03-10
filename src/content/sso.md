@@ -8,4 +8,4 @@ podcast_url: /#
 standards_url: /#
 ---
 
-Sign on once, be signed on anywhere. Apps that support Single Sign-On ask if a user is signed into another app already before asking them to sign on in full. As a result, the user sign-in experience improves, and the cost of managing user accounts and permissions per app reduces significantly.
+Sign in once and be signed in anywhere. Apps that support Single Sign-On check if a user is already signed into another app before asking them to sign on in full. This improves your users' sign-in experience and significantly reduces the admin cost of managing user accounts and permissions.
