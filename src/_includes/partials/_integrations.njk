@@ -1,13 +1,13 @@
-<div class="mt-6 flex flex-row justify-start flex-wrap gap-10 lg:gap-8">
+<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-16">
   {%- for item in collections.integration|sort(attribute='data.order') -%}
-    <section class="md:w-2/5 lg:w-1/5 xl:w-1/6 dark:text-color-white">
+    <section class="dark:text-color-white">
       <div class="">
         <h2 class="text-sii-cool-dark-blue dark:text-sii-cyan-light text-3xl">{{ item.data.title }}</h2>
       </div>
-      <div>
-        <a href={{ item.data.workshop_url}}>Workshop</a> |
-        <a href={{ item.data.podcast_url}}>Podcast</a> |
-        <a href={{ item.data.standards_url}}>Standards</a>
+      <div class="inline-flex flex-wrap gap-2 mt-4">
+        {% linkButton item.data.workshop_url, "Workshop" %}
+        {% linkButton item.data.podcast_url, "Podcast" %}
+        {% linkButton item.data.standards_url, "Standard" %}
       </div>
       <p class="md:mt-2">{{item.content | safe }}</p>
     </section>

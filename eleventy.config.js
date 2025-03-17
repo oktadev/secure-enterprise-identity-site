@@ -6,6 +6,12 @@ export default async function(eleventyConfig) {
   });
 
   eleventyConfig.addPlugin(HtmlBasePlugin);
+
+  eleventyConfig.addShortcode("linkButton", function(url, text) {
+    return `<a href={${url}} class="border rounded-sm w-32 p-2 text-center">
+              ${text}
+            </a>`;
+  });
 };
 
 export const config = {
