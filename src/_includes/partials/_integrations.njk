@@ -2,7 +2,6 @@
   {%- for item in collections.integration|sort(attribute='data.order') -%}
     <section class="dark:text-color-white md:max-w-240">
       <div class="">
-        {% sectionIcon item.data.fragment %}
         <h2 class="text-sii-cool-dark-blue dark:text-sii-cyan-light text-3xl">{{ item.data.title }}</h2>
       </div>
       <p class="md:mt-2">{{item.content | safe }}</p>
