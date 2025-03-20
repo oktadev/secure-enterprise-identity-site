@@ -1,17 +1,17 @@
 <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-16">
   {%- for item in collections.integration|sort(attribute='data.order') -%}
-    <section class="dark:text-color-white">
+    <section class="dark:text-color-white md:max-w-240 mb-14">
       <div class="flex gap-2 items-center">
         {% svgsprite %}
         {% svg item.data.fragment, "w-8 h-8 p-1 bg-sii-cyan stroke-white fill-white rounded-md" %}
         <h2 class="text-sii-cool-dark-blue dark:text-sii-cyan-light text-3xl">{{ item.data.title }}</h2>
       </div>
+      <p class="md:mt-2">{{item.content | safe }}</p>
       <div class="inline-flex flex-wrap gap-2 mt-4">
         {% linkButton item.data.workshop_url, "Workshop" %}
         {% linkButton item.data.podcast_url, "Podcast" %}
         {% linkButton item.data.standards_url, "Standard" %}
       </div>
-      <p class="md:mt-2">{{item.content | safe }}</p>
     </section>
   {%- endfor -%}
 </div>
