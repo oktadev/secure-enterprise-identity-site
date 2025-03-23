@@ -14,6 +14,7 @@
   --color-sii-darkest-blue: #1b263b;
   --color-sii-cyan: #34b6ec;
   --color-sii-cyan-light: #7acff3;
+  --breakpoint-md: 72rem;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
