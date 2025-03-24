@@ -16,6 +16,10 @@ export default async function(eleventyConfig) {
               ${text}
             </a>`;
   });
+
+  eleventyConfig.addNunjucksShortcode("linkInline", function(url, text) {
+    return `<a href="${url}">${text}</a>`;
+  });
 };
 
 export const config = {
