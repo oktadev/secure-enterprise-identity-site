@@ -4,7 +4,7 @@ title: Single Sign-On
 fragment: sso
 order: 1
 workshop_url: https://developer.okta.com/blog/2023/07/28/oidc_workshop
-standards_url: https://www.google.com/url?q=https://openid.net/developers/&sa=D&source=docs&ust=1741985202909832&usg=AOvVaw1h98so4G4Az5vfdy_mrGwN
+standards_url: https://openid.net/developers/
 site_urls:
   - { text: How OpenID Connect Works, url: https://openid.net/developers/how-connect-works/ }
   - { text: Why is single sign-on important, url: https://www.onelogin.com/learn/why-sso-important }
