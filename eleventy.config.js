@@ -12,7 +12,7 @@ export default async function(eleventyConfig) {
   });
 
   eleventyConfig.addNunjucksShortcode("linkButton", function(url, text) {
-    return `<a href="${url}" class="border rounded-sm w-32 p-2 text-center hover:border-sii-med-dark-blue  hover:text-sii-med-dark-blue active:border-sii-cool-dark-blue active:text-sii-cool-dark-blue ">
+    return `<a href="${url}" class="border border-sii-border text-sii-light-header dark:text-sii-dark-header rounded-sm w-32 p-2 text-center hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary">
               ${text}
             </a>`;
   });

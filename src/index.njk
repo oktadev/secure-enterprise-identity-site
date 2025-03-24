@@ -1,3 +1,11 @@
+---
+title: Secure Identity Integrations
+url: https://secureintegrations.dev
+description: Make your app a Secure Identity Integration by implementing five core features with modern, secure open standards. Grow trust in your app and encourage enterprise customer adoption of your app by staying ahead of identity-based threats.
+keywords: oidc, openid, openid connect, sso, single sign on, provisioning, scim, system for cross-domain identity management, provisioning, entitlements, enterprise ready, identity, ssf, shared signals framework, saas
+image:
+---
+
 <!doctype html>
   <html lang="en" data-theme="light">
     <head>
@@ -11,23 +19,23 @@
       <link rel="manifest" href="/img/site.webmanifest" />
 
       <!-- Primary Meta Tags -->
-      <meta name="title" content="Secure Identity Integrations" />
-      <meta name="description" content="Make your app a Secure Identity Integration by implementing five core features with modern, secure open standards. Grow trust in your app and encourage enterprise customer adoption of your app by staying ahead of identity-based threats." />
-      <meta name="keywords" content="oidc, openid, openid connect, sso, single sign on, provisioning, scim, system for cross-domain identity management, provisioning, entitlements, enterprise ready, identity, ssf, shared signals framework, saas">
+      <meta name="title" content="{{title}}" />
+      <meta name="description" content="{{description}}" />
+      <meta name="keywords" content="{{keywords}}">
 
       <!-- Open Graph / Facebook -->
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://secureintegrations.dev" />
-      <meta property="og:title" content="Secure Identity Integrations" />
-      <meta property="og:description" content="Make your app a Secure Identity Integration by implementing five core features with modern, secure open standards. Grow trust in your app and encourage enterprise customer adoption of your app by staying ahead of identity-based threats." />
-      <!-- <meta property="og:image" content="https://metatags.io/images/meta-tags.png" /> -->
+      <meta property="og:url" content="{{url}}" />
+      <meta property="og:title" content="{{title}}" />
+      <meta property="og:description" content="{{description}}" />
+      <!-- <meta property="og:image" content="{{image}}" /> -->
 
       <!-- Twitter -->
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://secureintegrations.dev" />
-      <meta property="twitter:title" content="Secure Identity Integrations" />
-      <meta property="twitter:description" content="Make your app a Secure Identity Integration by implementing five core features with modern, secure open standards. Grow trust in your app and encourage enterprise customer adoption of your app by staying ahead of identity-based threats." />
-      <!-- <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" /> -->
+      <meta property="twitter:url" content="{{url}}" />
+      <meta property="twitter:title" content="{{title}}" />
+      <meta property="twitter:description" content="{{description}}" />
+      <!-- <meta property="twitter:image" content="{{image}}" /> -->
 
       <base href="/">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,7 +43,7 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="/css/index.css">
-      <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+      <!--<link rel="stylesheet" href="{{ '/css/index.css' | url }}">-->
       <link rel="stylesheet" href="/css/tailwind.css">
       <script>
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -52,11 +60,11 @@
       })(window,document,'script','dataLayer','GTM-NTKK42MJ');</script>
       <!-- End Google Tag Manager -->
     </head>
-    <body class="bg-white dark:bg-sii-darkest-blue dark:text-sii-cool-light-gray flex flex-col min-h-screen">
+    <body class="bg-sii-light-background dark:bg-sii-dark-background text-sii-light-text dark:text-sii-dark-text flex flex-col min-h-screen">
       {% include "partials/_header.njk" %}
       <main class="grow max-w-600 m-auto md:px-32 px-8">
         <section class="my-12 sm:w-4/5 md:w-3/5 lg:w-1/2">
-          <h1 class="text-6xl text-sii-cool-dark-blue dark:text-sii-cyan">Secure Identity Integrations</h1>
+          <h1 class="text-6xl text-sii-light-header dark:text-sii-dark-header">Secure Identity Integrations</h1>
           <p class="mt-3 lg:w-4/5">Make your app a Secure Identity Integration by implementing five core features with modern, secure, open standards. Stay ahead of identity-based threats to grow trust in your app and encourage enterprise customer adoption.</p>
         </section>
         {% include "partials/_integrations.njk" %}
