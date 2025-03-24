@@ -3,7 +3,7 @@
     <section class="dark:text-color-white md:max-w-240 mb-14">
       <div class="flex gap-2 items-center">
         {% svgsprite %}
-        {% svg item.data.fragment, "w-8 h-8 p-1 bg-sii-cyan stroke-white fill-white rounded-md" %}
+        {% svg item.data.fragment, "w-8 h-8 p-1 bg-sii-cyan fill-white rounded-md" %}
         <h2 class="text-sii-cool-dark-blue dark:text-sii-cyan-light text-3xl">{{ item.data.title }}</h2>
       </div>
       <p class="md:mt-2">{{item.content | safe }}</p>
