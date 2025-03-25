@@ -61,12 +61,10 @@ image:
       <!-- End Google Tag Manager -->
     </head>
     <body class="bg-sii-light-background dark:bg-sii-dark-background text-sii-light-text dark:text-sii-dark-text flex flex-col min-h-screen">
-      {% include "partials/_header.njk" %}
-      <main class="grow max-w-600 m-auto md:px-32 px-8">
-        <section class="my-12 sm:w-4/5 md:w-3/5 lg:w-1/2">
-          <h1 class="text-6xl text-sii-light-header dark:text-sii-dark-header">Secure Identity Integrations</h1>
-          <p class="mt-3 lg:w-4/5">Make your app a Secure Identity Integration by implementing five core features with modern, secure, open standards. Stay ahead of identity-based threats to grow trust in your app and encourage enterprise customer adoption.</p>
-        </section>
+      <header class="m-auto md:px-32 px-8 pt-8 mb-32">
+        {% include "partials/_header.njk" %}
+      </header>
+      <main class="m-auto md:px-32 px-8">
         {% include "partials/_integrations.njk" %}
       </main>
       {% include "partials/_footer.njk" %}
