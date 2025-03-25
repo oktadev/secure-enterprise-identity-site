@@ -5,7 +5,7 @@
         <div class="flex flex-col gap-4">
           <div class="flex gap-2 items-center">
           {% svgsprite %}
-          {% svg item.data.fragment, "w-8 h-8 p-1 bg-sii-primary rounded-md fill-white" %}
+          {% svg item.data.fragment, "w-8 h-8 p-1 bg-sii-primary rounded-md fill-white text-sii-primary" %}
           <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{ item.data.title }}</h2>
           </div>
           <p>{{item.content | safe }}</p>
