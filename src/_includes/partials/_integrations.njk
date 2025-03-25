@@ -1,17 +1,16 @@
-<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-16 auto-rows-fr">
+<section class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-24 auto-rows-fr">
   {%- for item in collections.integration|sort(attribute='data.order') -%}
-    <section class="text-sii-light-text dark:text-sii-dark-text md:max-w-240 mb-14 flex flex-col justify-between gap-4">
-      <div>
-        <div class="flex gap-2 items-center">
+    <div class="text-sii-light-text dark:text-sii-dark-text md:max-w-160 mb-14 grid justify-between gap-2 h-130 grid-rows-[2fr_min-content_1fr]">
+      <div class="flex flex-col justify-between">
+        <div class="flex flex-col gap-4">
+          <div class="flex gap-2 items-center">
           {% svgsprite %}
-          {% svg item.data.fragment, "w-8 h-8 p-1 bg-sii-primary rounded-md" %}
+          {% svg item.data.fragment, "w-8 h-8 p-1 bg-sii-primary rounded-md fill-white" %}
           <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{ item.data.title }}</h2>
+          </div>
+          <p>{{item.content | safe }}</p>
         </div>
-        <p>{{item.content | safe }}</p>
-      </div>
-
-      <div class="flex flex-col gap-8">
-        <div class="inline-flex flex-wrap gap-3">
+        <div class="inline-flex flex-wrap gap-4">
           {% if item.data.workshop_url %}
             {% linkButton item.data.workshop_url, "Workshop" %}
           {% endif %}
@@ -22,8 +21,11 @@
             {% linkButton item.data.standards_url, "Standard" %}
           {% endif %}
         </div>
-        <hr class="h-px my-8 bg-sii-border dark:bg-sii-dark-text border-0"/>
-        <div class="flex flex-col mt-1 gap-2">
+      </div>
+
+      <hr class="h-px my-8 bg-sii-border dark:bg-sii-dark-text border-0"/>
+
+      <div class="flex flex-col mt-1 gap-3">
           {%- for link in item.data.site_urls -%}
             <div class="inline-flex justify-between gap-2 w-full items-center">
               <div class="inline-flex gap-2">
@@ -46,10 +48,9 @@
               {% svg "arrow_forward", "w-4 h-4" %}
             </div>
           {%- endfor -%}
-        </div>
       </div>
-    </section>
+    </div>
   {%- endfor -%}
-</div>
+</section>
 
 
