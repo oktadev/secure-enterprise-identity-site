@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "start": "run-p dev:11ty dev:css",
-    "dev:11ty": "eleventy --serve",
     "dev:css": "npx @tailwindcss/cli -i ./public/css/tailwind.css -o _site/css/tailwind.css --watch",
+    "dev:11ty": "eleventy --serve",
     "build": "eleventy && npx @tailwindcss/cli -i ./public/css/tailwind.css -o _site/css/tailwind.css & npx del-cli _site/content/"
   },
   "keywords": [],
