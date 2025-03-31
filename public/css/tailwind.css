@@ -10,6 +10,15 @@
   --color-sii-border: #e1e1e1;
   --color-sii-primary: #644FC1;
   --color-sii-accent: #EDE9FE;
+  --color-sii-light-accent: #EDE9FE;
+  --color-sii-dark-accent: #977FC3;
+  --color-sii-light-hero-background: #fbfbfb;
+  --color-sii-dark-hero-background: #3D2B8E;
+  --color-sii-light-widget-background: #EDE9FE;
+  --color-sii-dark-widget-background: #4C3A9A;
+  --color-sii-dark-integration-panel-background: #4C3A9A;
+  --color-sii-light-integration-panel-text: #1F124A;
+  --color-sii-dark-integration-panel-text: #B0A1F4;
   --breakpoint-md: 900px;
   --breakpoint-sm: 640px;
   --breakpoint-xs: 320px;
