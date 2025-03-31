@@ -5,7 +5,7 @@
         <div class="flex flex-col gap-1.5">
           <div class="flex gap-2 items-center">
           {% svgsprite %}
-          {% svg item.data.fragment, "w-3 h-3 p-0.5 bg-sii-primary rounded-md fill-white" %}
+          {% svg item.data.fragment, "w-3 h-3 p-0.5 bg-sii-primary rounded-md fill-white **:text-sii-primary" %}
           <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{ item.data.title }}</h2>
           </div>
           <p>{{item.content | safe }}</p>
@@ -30,7 +30,7 @@
             <div class="grid grid-cols-[max-content_auto_min-content] gap-1">
               <div class="flex items-center">
                 {% svgsprite %}
-                {% svg "site", "w-2 h-2" %}
+                {% svg "site-icon", "w-2 h-2" %}
               </div>
               {% linkInline link.url, link.text %}
               <div class="flex items-center">
@@ -43,7 +43,7 @@
             <div class="grid grid-cols-[max-content_auto_min-content] gap-1">
               <div class="flex items-center">
                 {% svgsprite %}
-                {% svg "video", "w-2 h-2" %}
+                {% svg "video-icon", "w-2 h-2" %}
               </div>
               {% linkInline link.url, link.text %}
               <div class="flex items-center">
