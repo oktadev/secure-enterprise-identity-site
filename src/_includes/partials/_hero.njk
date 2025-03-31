@@ -1,39 +1,41 @@
-<div class="bg-sii-light-hero-background dark:bg-sii-dark-hero-background p-2 rounded-md flex flex-col gap-2">
-  <div class="grid grid-cols-2 gap-2">
-    <div class="bg-sii-light-accent dark:bg-sii-dark-widget-background rounded-md p-3 flex flex-col gap-3.5">
+<div class="flex justify-center md:justify-start">
+  <div class="flex flex-col gap-0.75 bg-sii-light-background p-0.75 rounded-lg grow-1 flex-wrap xs:max-w-31.25 sm:max-w-72.25">
+    <div class="grid grid-cols-2 gap-0.75">
+      <div class="bg-sii-accent rounded-lg p-1 flex flex-col gap-1.5 md:max-w-35 grow-1">
+        <div>
+          {% svgsprite %}
+          {% svg "entitlements", "w-5.5 h-5.5 p-1 bg-sii-primary fill-white rounded-lg" %}
+        </div>
+        <p class="max-w-15 text-sii-light-header">Entitlements Management</p>
+      </div>
+      <div class="bg-sii-accent rounded-lg p-1 flex flex-col gap-1.5 md:max-w-35 grow-1">
+        <div>
+          {% svgsprite %}
+          {% svg "shared-signals", "w-5.5 h-5.5 p-1 bg-sii-primary fill-white rounded-lg" %}
+        </div>
+        <p class="max-w-8 text-sii-light-header">Risk Signal Sharing</p>
+      </div>
+      <div class="bg-sii-accent rounded-lg p-1 flex flex-col gap-1.5 md:max-w-35 grow-1">
+        <div>
+          {% svgsprite %}
+          {% svg "lcm", "w-5.5 h-5.5 p-1 bg-sii-primary fill-white rounded-lg" %}
+        </div>
+        <p class="max-w-15 text-sii-light-header">Lifecycle Management</p>
+      </div>
+      <div class="bg-sii-accent rounded-lg p-1 flex flex-col gap-1.5 md:max-w-35 grow-1">
+        <div>
+          {% svgsprite %}
+          {% svg "session-termination", "w-5.5 h-5.5 p-1 bg-sii-primary fill-white rounded-lg" %}
+        </div>
+        <p class="max-w-8 text-sii-light-header">Session Termination</p>
+      </div>
+    </div>
+    <div class="h-7 flex bg-sii-primary rounded-lg justify-center items-center gap-1">
       <div>
         {% svgsprite %}
-        {% svg "entitlements", "w-10 h-10 p-1 bg-sii-primary fill-white rounded-md" %}
+        {% svg "sso", "w-4 h-4 fill-white rounded-lg *:color-sii-dark-integration-panel-background" %}
       </div>
-      <p class="max-w-40 text-sii-light-integration-panel-text dark:text-sii-dark-integration-panel-text">Entitlements Management</p>
+      <p class="text-white">Single Sign-On</p>
     </div>
-    <div class="bg-sii-light-widget-background dark:bg-sii-dark-widget-background rounded-md p-3 flex flex-col gap-3.5">
-      <div>
-        {% svgsprite %}
-        {% svg "shared-signals", "w-10 h-10 p-1 bg-sii-primary fill-white rounded-md" %}
-      </div>
-      <p class="max-w-30 text-sii-light-integration-panel-text dark:text-sii-dark-integration-panel-text">Risk Signal Sharing</p>
-    </div>
-    <div class="bg-sii-light-widget-background dark:bg-sii-dark-widget-background rounded-md p-3 flex flex-col gap-3.5">
-      <div>
-        {% svgsprite %}
-        {% svg "lcm", "w-10 h-10 p-1 bg-sii-primary fill-white rounded-md" %}
-      </div>
-      <p class="max-w-40 text-sii-light-integration-panel-text dark:text-sii-dark-integration-panel-text">Lifecycle Management</p>
-    </div>
-    <div class="bg-sii-light-widget-background dark:bg-sii-dark-widget-background rounded-md p-3 flex flex-col gap-3.5">
-      <div>
-        {% svgsprite %}
-        {% svg "session-termination", "w-10 h-10 p-1 bg-sii-primary fill-white rounded-md" %}
-      </div>
-      <p class="max-w-30 text-sii-light-integration-panel-text dark:text-sii-dark-integration-panel-text">Session Termination</p>
-    </div>
-  </div>
-  <div class="h-24 flex bg-sii-primary rounded-md justify-center items-center">
-    <div>
-      {% svgsprite %}
-      {% svg "sso", "w-10 h-10 p-1 fill-white rounded-md text-sii-primary" %}
-    </div>
-    <p class="text-white">Single Sign-On</p>
   </div>
 </div>
