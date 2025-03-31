@@ -1,16 +1,16 @@
-<section class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-24 auto-rows-fr">
+<section class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-9 auto-rows-fr">
   {%- for item in collections.integration|sort(attribute='data.order') -%}
-    <div class="text-sii-light-text dark:text-sii-dark-text md:max-w-160 mb-14 grid justify-between gap-2 h-130 grid-rows-[2fr_min-content_1fr]">
+    <div class="md:max-w-60 mb-5 grid justify-between gap-2 grow grid-rows-[2fr_min-content_1fr]">
       <div class="flex flex-col justify-between">
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-1.5">
           <div class="flex gap-2 items-center">
           {% svgsprite %}
-          {% svg item.data.fragment, "w-8 h-8 p-1 bg-sii-primary rounded-md fill-white" %}
+          {% svg item.data.fragment, "w-3 h-3 p-0.5 bg-sii-primary rounded-md fill-white" %}
           <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{ item.data.title }}</h2>
           </div>
           <p>{{item.content | safe }}</p>
         </div>
-        <div class="inline-flex flex-wrap gap-4">
+        <div class="inline-flex flex-wrap gap-2">
           {% if item.data.workshop_url %}
             {% linkButton item.data.workshop_url, "Workshop" %}
           {% endif %}
@@ -23,29 +23,33 @@
         </div>
       </div>
 
-      <hr class="h-px my-8 bg-sii-border dark:bg-sii-dark-text border-0"/>
+      <hr class="my-1 h-[1px] bg-sii-border dark:bg-sii-dark-text border-0"/>
 
-      <div class="flex flex-col mt-1 gap-3">
+      <div class="flex flex-col mt-0.5 gap-1">
           {%- for link in item.data.site_urls -%}
-            <div class="inline-flex justify-between gap-2 w-full items-center">
-              <div class="inline-flex gap-2">
+            <div class="grid grid-cols-[max-content_auto_min-content] gap-1">
+              <div class="flex items-center">
                 {% svgsprite %}
-                {% svg "site", "w-6 h-6" %}
-                {% linkInline link.url, link.text %}
+                {% svg "site", "w-2 h-2" %}
               </div>
-              {% svgsprite %}
-              {% svg "arrow_forward", "w-4 h-4" %}
+              {% linkInline link.url, link.text %}
+              <div class="flex items-center">
+                {% svgsprite %}
+                {% svg "arrow_forward", "w-1.5 h-1.5" %}
+              </div>
             </div>
           {%- endfor -%}
           {%- for link in item.data.video_urls -%}
-            <div class="inline-flex justify-between gap-2 w-full items-center">
-              <div class="inline-flex gap-2">
+            <div class="grid grid-cols-[max-content_auto_min-content] gap-1">
+              <div class="flex items-center">
                 {% svgsprite %}
-                {% svg "video", "w-6 h-6" %}
-                {% linkInline link.url, link.text %}
+                {% svg "video", "w-2 h-2" %}
               </div>
-              {% svgsprite %}
-              {% svg "arrow_forward", "w-4 h-4" %}
+              {% linkInline link.url, link.text %}
+              <div class="flex items-center">
+                {% svgsprite %}
+                {% svg "arrow_forward", "w-1.5 h-1.5" %}
+              </div>
             </div>
           {%- endfor -%}
       </div>

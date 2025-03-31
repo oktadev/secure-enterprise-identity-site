@@ -10,7 +10,10 @@
   --color-sii-border: #e1e1e1;
   --color-sii-primary: #644FC1;
   --color-sii-accent: #EDE9FE;
-  --breakpoint-md: 72rem;
+  --breakpoint-md: 900px;
+  --breakpoint-sm: 640px;
+  --breakpoint-xs: 320px;
+  --spacing: 8px; 
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
