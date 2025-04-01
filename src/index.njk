@@ -69,14 +69,15 @@ image: /img/site.png
       {% include "partials/_footer.njk" %}
 
       <script>
+        const themeToggle = document.getElementById('theme-toggle-switch')
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
         const initialTheme = document.documentElement.dataset.theme;
 
         if (initialTheme === 'dark') {
-            themeToggleLightIcon.classList.remove('hidden');
-        } else {
             themeToggleDarkIcon.classList.remove('hidden');
+        } else {
+            themeToggleLightIcon.classList.remove('hidden');
         }
 
         const themeToggleBtn = document.getElementById('theme-toggle');
@@ -88,8 +89,13 @@ image: /img/site.png
 
           if (theme === 'light') {
             document.documentElement.dataset.theme = 'dark';
+            themeToggle.classList.remove('bg-yellow-500','-translate-x-1')
+            themeToggle.classList.add('bg-gray-700','translate-x-full')
+            {# TODO: Add aria attrs, update colors #}
           } else {
             document.documentElement.dataset.theme = 'light';
+            themeToggle.classList.add('bg-yellow-500','-translate-x-1')
+            themeToggle.classList.remove('bg-gray-700','translate-x-full')
           }
         });
       </script>
