@@ -75,9 +75,13 @@ image: /img/site.png
         const initialTheme = document.documentElement.dataset.theme;
 
         if (initialTheme === 'dark') {
-            themeToggleDarkIcon.classList.remove('hidden');
+          themeToggleDarkIcon.classList.remove('hidden');          
+          themeToggle.classList.remove('bg-sii-primary','-translate-x-1')
+          themeToggle.classList.add('bg-sii-dark-hero-background','translate-x-full')
         } else {
-            themeToggleLightIcon.classList.remove('hidden');
+          themeToggleLightIcon.classList.remove('hidden');
+          themeToggle.classList.add('bg-sii-primary','-translate-x-1')
+          themeToggle.classList.remove('bg-sii-dark-hero-background','translate-x-full')
         }
 
         const themeToggleBtn = document.getElementById('theme-toggle');
@@ -89,13 +93,12 @@ image: /img/site.png
 
           if (theme === 'light') {
             document.documentElement.dataset.theme = 'dark';
-            themeToggle.classList.remove('bg-yellow-500','-translate-x-1')
-            themeToggle.classList.add('bg-gray-700','translate-x-full')
-            {# TODO: Add aria attrs, update colors #}
+            themeToggle.classList.remove('bg-sii-primary','-translate-x-1')
+            themeToggle.classList.add('bg-sii-dark-hero-background','translate-x-full')
           } else {
             document.documentElement.dataset.theme = 'light';
-            themeToggle.classList.add('bg-yellow-500','-translate-x-1')
-            themeToggle.classList.remove('bg-gray-700','translate-x-full')
+            themeToggle.classList.add('bg-sii-primary','-translate-x-1')
+            themeToggle.classList.remove('bg-sii-dark-hero-background','translate-x-full')
           }
         });
       </script>
