@@ -1,9 +1,9 @@
-import { HtmlBasePlugin } from '@11ty/eleventy';
-import svgSprite from 'eleventy-plugin-svg-sprite';
+import { HtmlBasePlugin } from "@11ty/eleventy";
+import svgSprite from "eleventy-plugin-svg-sprite";
 
-export default async function(eleventyConfig) {
+export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
-    "./public/": "/"
+    "./public/": "/",
   });
 
   eleventyConfig.addPlugin(HtmlBasePlugin);
@@ -11,19 +11,19 @@ export default async function(eleventyConfig) {
     path: "./public/img",
   });
 
-  eleventyConfig.addNunjucksShortcode("linkButton", function(url, text) {
+  eleventyConfig.addNunjucksShortcode("linkButton", function (url, text) {
     return `<a href="${url}" class="border border-sii-border text-sii-light-header dark:text-sii-dark-header rounded-sm w-16 p-0.75 text-center hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary">
               ${text}
             </a>`;
   });
 
-  eleventyConfig.addNunjucksShortcode("linkInline", function(url, text) {
+  eleventyConfig.addNunjucksShortcode("linkInline", function (url, text) {
     return `<a href="${url}">${text}</a>`;
   });
-};
+}
 
 export const config = {
   dir: {
-    input: "src"
-  }
+    input: "src",
+  },
 };
