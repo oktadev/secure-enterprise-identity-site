@@ -72,10 +72,12 @@ image: /img/site.png
         const themeToggle = document.getElementById('theme-toggle-switch')
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const themeToggleDarkIconSm = document.getElementById('theme-toggle-dark-icon-sm');
+        const themeToggleLightIconSm = document.getElementById('theme-toggle-light-icon-sm');
         const initialTheme = document.documentElement.dataset.theme;
 
         if (initialTheme === 'dark') {
-          themeToggleDarkIcon.classList.remove('hidden');          
+          themeToggleDarkIcon.classList.remove('hidden');
           themeToggle.classList.remove('bg-sii-primary','-translate-x-1')
           themeToggle.classList.add('bg-sii-dark-hero-background','translate-x-full')
         } else {
@@ -99,6 +101,36 @@ image: /img/site.png
             document.documentElement.dataset.theme = 'light';
             themeToggle.classList.add('bg-sii-primary','-translate-x-1')
             themeToggle.classList.remove('bg-sii-dark-hero-background','translate-x-full')
+          }
+        });
+
+        const themeToggleSm = document.getElementById('theme-toggle-switch-sm')
+
+        if (initialTheme === 'dark') {
+          themeToggleDarkIconSm.classList.remove('hidden');          
+          themeToggleSm.classList.remove('bg-sii-primary','-translate-x-1')
+          themeToggleSm.classList.add('bg-sii-dark-hero-background','translate-x-full')
+        } else {
+          themeToggleLightIconSm.classList.remove('hidden');
+          themeToggleSm.classList.add('bg-sii-primary','-translate-x-1')
+          themeToggleSm.classList.remove('bg-sii-dark-hero-background','translate-x-full')
+        }
+
+        const themeToggleBtnSm = document.getElementById('theme-toggle-sm');
+        themeToggleBtnSm.addEventListener('click', function() {
+          const theme = document.documentElement.dataset.theme;
+
+          themeToggleDarkIconSm.classList.toggle('hidden');
+          themeToggleLightIconSm.classList.toggle('hidden');
+
+          if (theme === 'light') {
+            document.documentElement.dataset.theme = 'dark';
+            themeToggleSm.classList.remove('bg-sii-primary','-translate-x-1')
+            themeToggleSm.classList.add('bg-sii-dark-hero-background','translate-x-full')
+          } else {
+            document.documentElement.dataset.theme = 'light';
+            themeToggleSm.classList.add('bg-sii-primary','-translate-x-1')
+            themeToggleSm.classList.remove('bg-sii-dark-hero-background','translate-x-full')
           }
         });
       </script>
