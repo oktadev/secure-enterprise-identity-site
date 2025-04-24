@@ -11,8 +11,8 @@
           <p>{{item.content | safe }}</p>
         </div>
         <div class="inline-flex flex-wrap gap-2">
-          {% if item.data.workshop_url %}
-            {% linkButton item.data.workshop_url, "Workshop" %}
+          {% if item.data.tutorial_url %}
+            {% linkButton item.data.tutorial_url, "Tutorial" %}
           {% endif %}
           {% if item.data.podcast_url %}
             {% linkButton item.data.podcast_url, "Podcast" %}
