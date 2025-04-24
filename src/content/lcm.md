@@ -3,7 +3,7 @@ tags: integration
 title: Lifecycle Management
 fragment: lcm
 order: 2
-workshop_url: https://developer.okta.com/blog/2023/07/28/scim-workshop
+tutorial_url: https://developer.okta.com/blog/2023/07/28/scim-workshop
 standards_url: https://scim.cloud/
 site_urls:
   - { text: SCIM Playground, url: https://scim.dev/ }

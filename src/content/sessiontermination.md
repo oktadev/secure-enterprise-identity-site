@@ -3,7 +3,7 @@ tags: integration
 title: Session Termination
 fragment: session-termination
 order: 5
-workshop_url: https://developer.okta.com/blog/2024/04/30/express-universal-logout
+tutorial_url: https://developer.okta.com/blog/2024/04/30/express-universal-logout
 standards_url: https://www.ietf.org/archive/id/draft-parecki-oauth-global-token-revocation-01.html
 video_urls:
   - { text: Global Token Revocation podcast, url: https://www.youtube.com/watch?v=2snTFRFsAs8 }
