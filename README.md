@@ -1,4 +1,4 @@
-# Okta Secure Integrations microsite
+# Okta Secure Enterprise Identity microsite
 
 ## Getting going
 
