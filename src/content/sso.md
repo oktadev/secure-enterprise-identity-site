@@ -1,7 +1,7 @@
 ---
 tags: integration
-title: Single Sign-On
-fragment: sso
+title: Authentication
+fragment: authn
 order: 1
 tutorial_url: https://developer.okta.com/blog/2023/07/28/oidc_workshop
 standards_url: https://openid.net/developers/
