@@ -1,7 +1,7 @@
 ---
 tags: integration
-title: Lifecycle Management
-fragment: lcm
+title: Automate user lifecycle
+fragment: ulm
 order: 2
 tutorial_url: https://developer.okta.com/blog/2023/07/28/scim-workshop
 standards_url: https://scim.cloud/
