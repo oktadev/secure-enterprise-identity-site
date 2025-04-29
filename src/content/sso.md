@@ -1,9 +1,9 @@
 ---
 tags: integration
-title: Single Sign-On
-fragment: sso
+title: Authentication
+fragment: authn
 order: 1
-workshop_url: https://developer.okta.com/blog/2023/07/28/oidc_workshop
+tutorial_url: https://developer.okta.com/blog/2023/07/28/oidc_workshop
 standards_url: https://openid.net/developers/
 site_urls:
   - { text: How OpenID Connect Works, url: https://openid.net/developers/how-connect-works/ }
