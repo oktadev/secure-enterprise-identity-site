@@ -48,7 +48,8 @@ export default function (eleventyConfig) {
       input: 'src',
       output: '_site',
       layouts: 'layouts',
-      includes: '_includes'
+      includes: '_includes',
+      data: '_data'
     }
   }
 }
