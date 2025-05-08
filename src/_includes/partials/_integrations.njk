@@ -4,9 +4,9 @@
     <div class="flex flex-col justify-between">
       <div class="flex flex-col gap-1.5">
         <div class="flex gap-2 items-center">
-          {% svgsprite %}
+          {# {% svgsprite %}
           {% svg item.data.fragment, "w-3 h-3 p-0.5 bg-sii-primary rounded-md fill-sii-light-background
-          **:text-sii-primary" %}
+          **:text-sii-primary" %} #}
           <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{ item.data.title }}</h2>
         </div>
         <p>{{item.content | safe }}</p>
@@ -30,26 +30,26 @@
       {%- for link in item.data.site_urls -%}
       <div class="grid grid-cols-[max-content_auto_min-content] gap-1">
         <div class="flex items-center">
-          {% svgsprite %}
-          {% svg "site-icon", "w-2 h-2" %}
+          {# {% svgsprite %}
+          {% svg "site-icon", "w-2 h-2" %} #}
         </div>
         {% linkInline link.url, link.text %}
         <div class="flex items-center">
-          {% svgsprite %}
-          {% svg "arrow_forward", "w-1.5 h-1.5" %}
+          {# {% svgsprite %}
+          {% svg "arrow_forward", "w-1.5 h-1.5" %} #}
         </div>
       </div>
       {%- endfor -%}
       {%- for link in item.data.video_urls -%}
       <div class="grid grid-cols-[max-content_auto_min-content] gap-1">
         <div class="flex items-center">
-          {% svgsprite %}
-          {% svg "video-icon", "w-2 h-2" %}
+          {# {% svgsprite %}
+          {% svg "video-icon", "w-2 h-2" %} #}
         </div>
         {% linkInline link.url, link.text %}
         <div class="flex items-center">
-          {% svgsprite %}
-          {% svg "arrow_forward", "w-1.5 h-1.5" %}
+          {# {% svgsprite %}
+          {% svg "arrow_forward", "w-1.5 h-1.5" %} #}
         </div>
       </div>
       {%- endfor -%}
