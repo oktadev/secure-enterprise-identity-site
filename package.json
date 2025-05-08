@@ -4,10 +4,9 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "run-p dev:11ty dev:css",
-    "dev:css": "npx @tailwindcss/cli -i ./public/css/tailwind.css -o _site/css/tailwind.css --watch",
-    "dev:11ty": "eleventy --serve",
-    "build": "eleventy && npx @tailwindcss/cli -i ./public/css/tailwind.css -o _site/css/tailwind.css & npx del-cli _site/content/"
+    "start": "eleventy --serve",
+    "build": "eleventy && npx del-cli _site/content/",
+    "clean": "npx del-cli _site"
   },
   "keywords": [],
   "author": "OktaDev <dev-advocacy@okta.com>",
@@ -16,9 +15,8 @@
   "type": "module",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@tailwindcss/cli": "^4.1.5",
-    "eleventy-plugin-svg-sprite": "^2.4.3",
-    "npm-run-all": "^4.1.5",
+    "@11ty/eleventy-plugin-vite": "^6.0.0",
+    "@tailwindcss/vite": "^4.1.5",
     "tailwindcss": "^4.1.5"
   }
 }
