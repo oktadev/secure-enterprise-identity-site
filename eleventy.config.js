@@ -22,11 +22,16 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addPlugin(shortcodes);
+  // Object.keys(shortcodes).forEach((shortcodeName) => {
+	// 	eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
+	// });
   eleventyConfig.addCollection('topic', function (collectionsApi) {
     return collectionsApi
       .getFilteredByTag('integration')
       .filter((index) => index.data.order < 3)
   });
+
+  eleventyConfig.addLayoutAlias('base', 'base.njk');
 
   // Per-page bundles, see https://github.com/11ty/eleventy-plugin-bundle
   // Adds the {% css %} paired shortcode
@@ -37,8 +42,12 @@ export default function (eleventyConfig) {
   });
 
   return {
+    passthroughFileCopy: true,
     dir: {
-      input: 'src'
+      input: 'src',
+      output: '_site',
+      layouts: 'layouts',
+      includes: '_includes',
     }
   }
 }

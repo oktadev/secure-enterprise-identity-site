@@ -1,0 +1,117 @@
+---
+title: Enterprise Identity for Developers
+url: https://www.enterpriseidentity.dev/
+description: Build secure, cross-provider enterprise identity solutions with tools and best practices from the identity community. Created by Okta developers for developers.
+keywords: oidc, openid, openid connect, sso, single sign on, provisioning, scim, system for cross-domain identity management, provisioning, entitlements, enterprise ready, identity, saas
+image: /img/site.png
+---
+
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    {%- css %}{% include "public/css/index.css" %}{% endcss %}
+    <style>{% getBundle "css" %}</style>
+    <title>{{title}}</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <link rel="manifest" href="/img/site.webmanifest" />
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="{{title}}" />
+  <meta name="description" content="{{description}}" />
+  <meta name="keywords" content="{{keywords}}">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{url}}" />
+  <meta property="og:title" content="{{title}}" />
+  <meta property="og:description" content="{{description}}" />
+  <meta property="og:image" content="{{image}}" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="{{url}}" />
+  <meta property="twitter:title" content="{{title}}" />
+  <meta property="twitter:description" content="{{description}}" />
+  <meta property="twitter:image" content="{{image}}" />
+
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  {%- css %}{% include "public/css/index.css" %}{% endcss %}
+  <style>{% getBundle "css" %}</style>
+  <script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.dataset.theme = 'dark';
+    } else {
+      document.documentElement.dataset.theme = 'light';
+    }
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NTKK42MJ');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body
+  class="min-w-40 bg-sii-light-background dark:bg-sii-dark-background text-sii-light-text dark:text-sii-dark-text flex flex-col min-h-screen">
+  <header class="m-auto md:px-14 px-3 pt-6 mb-12">
+    {% include "_header.njk" %}
+  </header>
+  <main class="m-auto md:px-14 px-3">
+    {{ content | safe }}
+  </main>
+  {% include "_footer.njk" %}
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle-switch')
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const initialTheme = document.documentElement.dataset.theme;
+
+    if (initialTheme === 'dark') {
+      themeToggleDarkIcon.classList.remove('hidden');
+      themeToggle.classList.remove('bg-sii-primary', '-translate-x-1')
+      themeToggle.classList.add('bg-sii-dark-hero-background', 'translate-x-full')
+    } else {
+      themeToggleLightIcon.classList.remove('hidden');
+      themeToggle.classList.add('bg-sii-primary', '-translate-x-1')
+      themeToggle.classList.remove('bg-sii-dark-hero-background', 'translate-x-full')
+    }
+
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    themeToggleBtn.addEventListener('click', function () {
+      const theme = document.documentElement.dataset.theme;
+
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (theme === 'light') {
+        document.documentElement.dataset.theme = 'dark';
+        themeToggle.classList.remove('bg-sii-primary', '-translate-x-1')
+        themeToggle.classList.add('bg-sii-dark-hero-background', 'translate-x-full')
+      } else {
+        document.documentElement.dataset.theme = 'light';
+        themeToggle.classList.add('bg-sii-primary', '-translate-x-1')
+        themeToggle.classList.remove('bg-sii-dark-hero-background', 'translate-x-full')
+      }
+    });
+  </script>
+</body>
+</html>
