@@ -28,29 +28,21 @@
 
     <div class="flex flex-col mt-0.5 gap-1">
       {%- for link in item.data.site_urls -%}
-      <div class="grid grid-cols-[max-content_auto_min-content] gap-1">
+      <div class="flex justify-between items-center">
         <div class="flex items-center">
-          {# {% svgsprite %}
-          {% svg "site-icon", "w-2 h-2" %} #}
+          <img src="img/site-icon.svg" class="w-2 h-2 mr-1" />
+          <a href="{{link.url}}">{{link.text}}</a>
         </div>
-        {% linkInline link.url, link.text %}
-        <div class="flex items-center">
-          {# {% svgsprite %}
-          {% svg "arrow_forward", "w-1.5 h-1.5" %} #}
-        </div>
+        <img src="img/arrow_forward.svg" class="w-1.5 h-1.5" />
       </div>
       {%- endfor -%}
       {%- for link in item.data.video_urls -%}
-      <div class="grid grid-cols-[max-content_auto_min-content] gap-1">
+      <div class="flex justify-between items-center">
         <div class="flex items-center">
-          {# {% svgsprite %}
-          {% svg "video-icon", "w-2 h-2" %} #}
+          <img src="img/video-icon.svg" class="w-2 h-2 mr-1" />
+          <a href="{{link.url}}">{{link.text}}</a>
         </div>
-        {% linkInline link.url, link.text %}
-        <div class="flex items-center">
-          {# {% svgsprite %}
-          {% svg "arrow_forward", "w-1.5 h-1.5" %} #}
-        </div>
+        <img src="img/arrow_forward.svg" class="w-1.5 h-1.5" />
       </div>
       {%- endfor -%}
     </div>

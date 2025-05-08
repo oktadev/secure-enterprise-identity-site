@@ -71,10 +71,9 @@ image: /img/site.png
 </head>
 <body
   class="min-w-40 bg-sii-light-background dark:bg-sii-dark-background text-sii-light-text dark:text-sii-dark-text flex flex-col min-h-screen">
-  <header class="m-auto md:px-14 px-3 pt-6 mb-12">
-    {% include "_header.njk" %}
-  </header>
-  <main class="m-auto md:px-14 px-3">
+  {% include "_header.njk" %}
+
+  <main class="my-12 m-auto md:px-14 px-3">
     {{ content | safe }}
   </main>
   {% include "_footer.njk" %}
