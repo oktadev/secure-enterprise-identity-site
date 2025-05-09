@@ -29,6 +29,7 @@ html,body {
   --color-sii-dark-integration-panel-background: #4C3A9A;
   --color-sii-light-integration-panel-text: #1F124A;
   --color-sii-dark-integration-panel-text: #B0A1F4;
+  --color-sii-hero-background: #d9d1fd;
   --breakpoint-md: 900px;
   --breakpoint-sm: 640px;
   --breakpoint-xs: 320px;
