@@ -17,6 +17,6 @@
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-vite": "^6.0.0",
     "@tailwindcss/vite": "^4.1.5",
-    "tailwindcss": "^4.1.5"
+    "tailwindcss": "^4.1.6"
   }
 }
