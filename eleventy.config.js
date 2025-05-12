@@ -1,5 +1,6 @@
 import { HtmlBasePlugin } from '@11ty/eleventy'
 import EleventyVitePlugin from '@11ty/eleventy-plugin-vite'
+import pluginNavigation from "@11ty/eleventy-navigation";
 import tailwindcss from '@tailwindcss/vite'
 
 import shortcodes from './utils/shortcodes.js'
@@ -13,7 +14,8 @@ export default function (eleventyConfig) {
     'style.out.css': 'style.css'
   })
 
-  eleventyConfig.addPlugin(HtmlBasePlugin)
+  eleventyConfig.addPlugin(HtmlBasePlugin);
+  eleventyConfig.addPlugin(pluginNavigation);
 
   eleventyConfig.addPlugin(EleventyVitePlugin, {
     viteOptions: {
@@ -24,12 +26,6 @@ export default function (eleventyConfig) {
   // eleventyConfig.addPlugin(shortcodes);
   Object.keys(shortcodes).forEach((shortcodeName) => {
     eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
-  })
-
-  eleventyConfig.addCollection('topic', function (collectionsApi) {
-    return collectionsApi
-      .getFilteredByTag('integration')
-      .filter((index) => index.data.order < 3)
   })
 
   eleventyConfig.addLayoutAlias('base', 'base.njk')

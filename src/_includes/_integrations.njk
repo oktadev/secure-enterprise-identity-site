@@ -9,42 +9,12 @@
           **:text-sii-primary" %} #}
           <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{ item.data.title }}</h2>
         </div>
-        <p>{{item.content | safe }}</p>
+        <p>{{item.data.description }}</p>
       </div>
-      <div class="inline-flex flex-wrap gap-2">
-        {% if item.data.tutorial_url %}
-        {% linkButton item.data.tutorial_url, "Tutorial" %}
-        {% endif %}
-        {% if item.data.podcast_url %}
-        {% linkButton item.data.podcast_url, "Podcast" %}
-        {% endif %}
-        {% if item.data.standards_url %}
-        {% linkButton item.data.standards_url, "Standard" %}
-        {% endif %}
+      <div class="mt-3">
+        {% linkButton item.page.url, "Explore" %}
+        {# <a href="{{ item.page.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>Explore</a> #}
       </div>
-    </div>
-
-    <hr class="my-1 h-[1px] bg-sii-border dark:bg-sii-dark-text border-0" />
-
-    <div class="flex flex-col mt-0.5 gap-1">
-      {%- for link in item.data.site_urls -%}
-      <div class="flex justify-between items-center">
-        <div class="flex items-center">
-          <img src="img/site-icon.svg" class="w-2 h-2 mr-1" />
-          <a href="{{link.url}}">{{link.text}}</a>
-        </div>
-        <img src="img/arrow_forward.svg" class="w-1.5 h-1.5" />
-      </div>
-      {%- endfor -%}
-      {%- for link in item.data.video_urls -%}
-      <div class="flex justify-between items-center">
-        <div class="flex items-center">
-          <img src="img/video-icon.svg" class="w-2 h-2 mr-1" />
-          <a href="{{link.url}}">{{link.text}}</a>
-        </div>
-        <img src="img/arrow_forward.svg" class="w-1.5 h-1.5" />
-      </div>
-      {%- endfor -%}
     </div>
   </div>
   {%- endfor -%}
