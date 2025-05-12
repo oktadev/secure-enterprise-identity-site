@@ -1,8 +1,18 @@
-<header class="p-2 flex justify-between min-w-sm">
-  <div class="flex text-sii-light-text dark:text-sii-dark-text">
-    <img class="w-2.5 mr-1" src="img/favicon.svg" /> <span>Enterprise Identity for Developers</span>
+<header class="p-2 min-w-sm">
+  <div class="flex justify-between">
+    <div class="flex text-sii-light-text dark:text-sii-dark-text">
+      <img class="w-2.5 mr-1" src="img/favicon.svg" /> <span>Enterprise Identity for Developers</span>
+    </div>
+    {% include "../elements/themeSwitch.njk"%}
   </div>
-  {% include "../elements/themeSwitch.njk"%}
+
+  {# <nav>
+    <ul>
+    {%- for entry in collections.all | eleventyNavigation %}
+      <li><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+    {%- endfor %}
+    </ul>
+  </nav> #}
 </header>
 
 
