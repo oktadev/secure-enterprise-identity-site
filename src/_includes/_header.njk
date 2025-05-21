@@ -1,18 +1,25 @@
-<header class="p-2 min-w-sm">
+<header>
   <div class="flex justify-between">
-    <div class="flex text-sii-light-text dark:text-sii-dark-text">
-      <img class="w-2.5 mr-1" src="img/favicon.svg" /> <span>Enterprise Identity for Developers</span>
-    </div>
+
+    <a class="flex text-sii-light-text dark:text-sii-dark-text" href="/">
+      <img class="w-2.5 mr-1" src="img/favicon.svg" alt="Enterprise Identity for Developers logo"/>
+      <span class="sr-only sm:not-sr-only text-sii-light-header dark:text-sii-dark-header">Enterprise Identity for Developers</span>
+    </a>
     {% include "../elements/themeSwitch.njk"%}
+
   </div>
 
-  {# <nav>
-    <ul>
+  <nav class="mt-2">
+    <ul class="flex justify-center text-sm space-x-1 xs:space-x-3">
     {%- for entry in collections.all | eleventyNavigation %}
-      <li><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+      <li>
+        <a class="text-nowrap underline text-sii-light-header dark:text-sii-dark-header hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+      </li>
     {%- endfor %}
     </ul>
-  </nav> #}
+  </nav>
+
+
 </header>
 
 

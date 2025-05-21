@@ -1,12 +1,15 @@
 ---
+layout: topic
 tags: topic
-order: 1
-layout: base
+order: 2
 eleventyNavigation:
-  key: User
+  key: User lifecycle
   order: 2
 title: Automate user lifecycle
-description: Synchronize new and updated user account information between your app and a central user directory.
+summary: Keep user accounts in sync across systems
+description: Synchronize new and updated user account information between your app and a central user directory. Your app gets the changes when a user's profile is updated in the central user directory and vice versa.
+          Automate the entire lifecycle of user onboarding, updates, and offboarding. Reduce the complexity your app adds to your enterprise customers' ecosystems.
+image: img/undraw_add-user_rbko.svg
 tutorial_url: https://developer.okta.com/blog/2023/07/28/oidc_workshop
 standards_url: https://openid.net/developers/
 site_urls:
@@ -15,57 +18,4 @@ site_urls:
 video_urls:
   - { text: What is Single Sign-On Authentication? And…How Does it Work?, url: https://youtube.com/watch?v=Vp6kx4Sd_E0 }
 ---
-
-<section class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-9 auto-rows-fr">
-  {# {%- for item in collections.topic | sort(attribute='data.order') -%} #}
-  <div class="md:max-w-60 mb-5 grid justify-between gap-2 grow grid-rows-[2fr_min-content_1fr]">
-    <div class="flex flex-col justify-between">
-      <div class="flex flex-col gap-1.5">
-        <div class="flex gap-2 items-center">
-          {# {% svgsprite %}
-          {% svg item.data.fragment, "w-3 h-3 p-0.5 bg-sii-primary rounded-md fill-sii-light-background
-          **:text-sii-primary" %} #}
-          <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{ title }}</h2>
-        </div>
-        <p class="mb-3">Synchronize new and updated user account information between your app and a central user directory. Your app gets the changes when a user's profile is updated in the central user directory and vice versa.
-          Automate the entire lifecycle of user onboarding, updates, and offboarding. Reduce the complexity your app adds to your enterprise customers' ecosystems.</p>
-      </div>
-      <div class="inline-flex flex-wrap gap-2">
-        {% if tutorial_url %}
-        {% linkButton tutorial_url, "Tutorial" %}
-        {% endif %}
-        {% if podcast_url %}
-        {% linkButton podcast_url, "Podcast" %}
-        {% endif %}
-        {% if standards_url %}
-        {% linkButton standards_url, "Standard" %}
-        {% endif %}
-      </div>
-    </div>
-
-    <hr class="my-1 h-[1px] bg-sii-border dark:bg-sii-dark-text border-0" />
-
-    <div class="flex flex-col mt-0.5 gap-1">
-      {%- for link in site_urls -%}
-      <div class="flex justify-between items-center">
-        <div class="flex items-center">
-          <img src="img/site-icon.svg" class="w-2 h-2 mr-1" />
-          <a href="{{link.url}}">{{link.text}}</a>
-        </div>
-        <img src="img/arrow_forward.svg" class="w-1.5 h-1.5" />
-      </div>
-      {%- endfor -%}
-      {%- for link in video_urls -%}
-      <div class="flex justify-between items-center">
-        <div class="flex items-center">
-          <img src="img/video-icon.svg" class="w-2 h-2 mr-1" />
-          <a href="{{link.url}}">{{link.text}}</a>
-        </div>
-        <img src="img/arrow_forward.svg" class="w-1.5 h-1.5" />
-      </div>
-      {%- endfor -%}
-    </div>
-  </div>
-  {# {%- endfor -%} #}
-</section>
 
