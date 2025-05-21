@@ -28,12 +28,12 @@
 
 </head>
 <body
-  class="min-w-xs font-display bg-sii-light-background dark:bg-sii-dark-background text-sii-light-text dark:text-sii-dark-text">
+  class="min-w-xs font-display min-h-screen flex flex-col bg-sii-light-background dark:bg-sii-dark-background text-sii-light-text dark:text-sii-dark-text">
 
-  <div class="m-4 xs:m-8 md:m-12 space-y-8">
+  <div class="m-4 xs:m-8 md:m-12 space-y-8 grow">
     {% include "_header.njk" %}
 
-    <main>
+    <main class="grow">
       {{ content | safe }}
     </main>
   </div>
