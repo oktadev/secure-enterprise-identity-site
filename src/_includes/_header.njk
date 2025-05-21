@@ -2,14 +2,16 @@
   <div class="flex justify-between">
 
     <a class="flex text-sii-light-text dark:text-sii-dark-text" href="/">
-      <img class="w-2.5 mr-1" src="img/favicon.svg" alt="Enterprise Identity for Developers logo"/>
-      <span class="sr-only sm:not-sr-only text-sii-light-header dark:text-sii-dark-header">Enterprise Identity for Developers</span>
+      <div class="w-4">
+        <img class="w-3" src="img/favicon.svg" alt="Enterprise Identity for Developers logo"/>
+      </div>
+      <span class="sr-only sm:not-sr-only text-sii-light-header dark:text-sii-dark-header text-lg">Enterprise Identity for Developers</span>
     </a>
     {% include "../elements/themeSwitch.njk"%}
 
   </div>
 
-  <nav class="mt-2">
+  <nav class="mt-2 sr-only sm:not-sr-only">
     <ul class="flex justify-center text-sm space-x-1 xs:space-x-3">
     {%- for entry in collections.all | eleventyNavigation | sort(attribute='data.order') %}
       <li>
