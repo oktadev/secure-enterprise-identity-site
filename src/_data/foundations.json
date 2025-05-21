@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Why is identity important?",
+    "link": "https://stackoverflow.blog/2020/12/21/how-digital-identity-protects-your-software/"
+  },
+  {
+    "title": "What is enterprise identity?",
+    "link": "https://www.linkedin.com/pulse/what-main-differences-between-employeepartner-iam-vs-customer-seal"
+  },
+  {
+    "title": "Terminology and vocabulary overview",
+    "link": "https://developer.okta.com/docs/concepts/iam-overview-iam-terminology/"
+  },
+  {
+    "title": "OAuth and OIDC",
+    "link": "https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc"
+  }
+]

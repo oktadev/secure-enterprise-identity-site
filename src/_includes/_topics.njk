@@ -1,16 +1,22 @@
-<section class="mt-2 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 auto-rows-fr">
-  {%- for item in collections.topic | sort(attribute='data.order') -%}
+<section class="space-y-8">
+  <div class="space-y-4 md:max-w-60">
+    <h2 class="text-sii-light-header dark:text-sii-dark-header text-4xl">Explore enterprise identity concepts</h2>
+    <p>Maturing software applications have unique identity management solution needs. Explore concepts that elevate applications into enterprise-level software.</p>
+  </div>
+  <div class="mt-2 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 auto-rows-fr">
+    {%- for item in collections.topic | sort(attribute='data.order') -%}
     <div class="max-w-sm p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
-      <div class="p-4 bg-sii-hero-background rounded-md h-28 flex justify-center align-middle">
+      <div class="p-4 bg-sii-hero-background rounded-md h-20 md:h-28 flex justify-center align-middle">
         <a class="" href="{{item.page.url}}">
-          <img class="h-20" src="{{item.data.image}}" />
+          <img class="h-12 md:h-20" src="{{item.data.image}}" />
         </a>
       </div>
       <a href="{{item.page.url}}">
-        <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{item.data.title}}</h2>
+        <h3 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{item.data.title}}</h3>
       </a>
       <p class="justify-self-start grow">{{item.data.summary}}</p>
       {% linkButton item.page.url, "Explore" %}
     </div>
   {%- endfor -%}
+  </div>
 </section>

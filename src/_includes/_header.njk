@@ -11,7 +11,7 @@
 
   <nav class="mt-2">
     <ul class="flex justify-center text-sm space-x-1 xs:space-x-3">
-    {%- for entry in collections.all | eleventyNavigation %}
+    {%- for entry in collections.all | eleventyNavigation | sort(attribute='data.order') %}
       <li>
         <a class="text-nowrap underline text-sii-light-header dark:text-sii-dark-header hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
       </li>
