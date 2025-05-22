@@ -1,17 +1,7 @@
 @import "tailwindcss";
 
-/* Defaults */
-:root {
-	--font-family: "Inter", Helvetica, Arial, sans-serif;
-}
-
-html,body {
-  padding: 0;
-	margin: 0 auto;
-	font-family: var(--font-family);
-}
-
 @theme {
+  --font-display: "Inter", Helvetica, Arial, sans-serif;
   --color-sii-light-background: #fbfbfb;
   --color-sii-light-header: #191919;
   --color-sii-light-text: #686868;
@@ -37,3 +27,4 @@ html,body {
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+

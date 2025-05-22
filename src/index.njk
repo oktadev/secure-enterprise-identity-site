@@ -1,18 +1,23 @@
 ---
 layout: base
+eleventyNavigation:
+  key: Home
+  order: 1
+eleventyExcludeFromCollections: true
 ---
 
-<div>
-  <div class="flex justify-between flex-wrap-reverse mb-12">
-    <div class="md:max-w-60">
-      <h1 class="text-6xl/7 text-sii-light-header dark:text-sii-dark-header mb-6">Enterprise Identity for Developers</h1>
-      <p>Navigate the complexities of enterprise identity management. We offer guidance and best practices to simplify implementation and help you build secure, scalable identity solutions for your applications, avoiding common pitfalls along the way. Discover resources for developers, created by Okta developer and industry experts. Our aim is to demystify and clarify identity management for you.</p>
+<div class="space-y-12">
+  <div class="flex justify-between flex-wrap-reverse space-x-4">
+    <div class="md:max-w-68 space-y-4">
+      <h1 class="text-6xl/7 text-sii-light-header dark:text-sii-dark-header">Enterprise Identity for Developers</h1>
+      <p class="text-lg">Navigate the complexities of enterprise identity management. We offer guidance and best practices to simplify implementation and help you build secure, scalable identity solutions for your applications, avoiding common pitfalls along the way. Discover resources for developers, created by Okta developer and industry experts. Our aim is to demystify and clarify identity management for you.</p>
     </div>
-    <div class="mb-3 xl:mb-0 p-6 rounded-md bg-sii-hero-background">
-      <img class="w-52" src="img/undraw_two-factor-authentication_8tds.svg" />
+    <div class="mb-4 p-4 md:p-8 rounded-md bg-sii-hero-background">
+      <img class="w-60" src="img/undraw_two-factor-authentication_8tds.svg" />
     </div>
   </div>
 
-  {% include "_integrations.njk" %}
+  {% include "_topics.njk" %}
+  {% include "_foundations.njk" %}
 </div>
 

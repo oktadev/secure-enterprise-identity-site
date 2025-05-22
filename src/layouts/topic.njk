@@ -1,5 +1,9 @@
+---
+layout: base
+---
+
 <section class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-9 auto-rows-fr">
-  {%- for item in collections.topic | sort(attribute='data.order') -%}
+  {# {%- for item in collections.topic | sort(attribute='data.order') -%} #}
   <div class="md:max-w-60 mb-5 grid justify-between gap-2 grow grid-rows-[2fr_min-content_1fr]">
     <div class="flex flex-col justify-between">
       <div class="flex flex-col gap-1.5">
@@ -7,19 +11,19 @@
           {# {% svgsprite %}
           {% svg item.data.fragment, "w-3 h-3 p-0.5 bg-sii-primary rounded-md fill-sii-light-background
           **:text-sii-primary" %} #}
-          <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{ item.data.title }}</h2>
+          <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{ title }}</h2>
         </div>
-        <p>{{item.content | safe }}</p>
+        <p class="mb-3">{{ description }}</p>
       </div>
       <div class="inline-flex flex-wrap gap-2">
-        {% if item.data.tutorial_url %}
-        {% linkButton item.data.tutorial_url, "Tutorial" %}
+        {% if tutorial_url %}
+        {% linkButton tutorial_url, "Tutorial" %}
         {% endif %}
-        {% if item.data.podcast_url %}
-        {% linkButton item.data.podcast_url, "Podcast" %}
+        {% if podcast_url %}
+        {% linkButton podcast_url, "Podcast" %}
         {% endif %}
-        {% if item.data.standards_url %}
-        {% linkButton item.data.standards_url, "Standard" %}
+        {% if standards_url %}
+        {% linkButton standards_url, "Standard" %}
         {% endif %}
       </div>
     </div>
@@ -27,7 +31,7 @@
     <hr class="my-1 h-[1px] bg-sii-border dark:bg-sii-dark-text border-0" />
 
     <div class="flex flex-col mt-0.5 gap-1">
-      {%- for link in item.data.site_urls -%}
+      {%- for link in site_urls -%}
       <div class="flex justify-between items-center">
         <div class="flex items-center">
           <img src="img/site-icon.svg" class="w-2 h-2 mr-1" />
@@ -36,7 +40,7 @@
         <img src="img/arrow_forward.svg" class="w-1.5 h-1.5" />
       </div>
       {%- endfor -%}
-      {%- for link in item.data.video_urls -%}
+      {%- for link in video_urls -%}
       <div class="flex justify-between items-center">
         <div class="flex items-center">
           <img src="img/video-icon.svg" class="w-2 h-2 mr-1" />
@@ -47,5 +51,6 @@
       {%- endfor -%}
     </div>
   </div>
-  {%- endfor -%}
+  {# {%- endfor -%} #}
 </section>
+
