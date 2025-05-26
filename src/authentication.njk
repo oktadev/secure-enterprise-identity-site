@@ -6,16 +6,119 @@ eleventyNavigation:
   key: Authentication
   order: 2
 title: Authenticate
-summary: Sign in once and access all your apps
-description: Sign in once and be signed in anywhere. Apps that support Single Sign-On check if a user is already signed into another app before asking them to sign on in full. This improves your users' sign-in experience and significantly reduces the admin cost of managing user accounts and permissions.
+summary: Secure application access starts here
+description: Allow users to access your application with secure authentication methods using a reputable Identity Provider (IdP). Elevate your app's compatibility and maturity with Single Sign-On (SSO) to enable users to authenticate through someone else's IdP.
 image: img/undraw_secure-login_m11a.svg
-tutorial_url: https://developer.okta.com/blog/2023/07/28/oidc_workshop
-standards_url: https://openid.net/developers/
-site_urls:
-  - { text: How OpenID Connect Works, url: https://openid.net/developers/how-connect-works/ }
-  - { text: Why is single sign-on important, url: https://www.onelogin.com/learn/why-sso-important }
-video_urls:
-  - { text: What is Single Sign-On Authentication? And…How Does it Work?, url: https://youtube.com/watch?v=Vp6kx4Sd_E0 }
+learn:
+  - { text: How OpenID Connect Works, link_text: Read article, url: https://openid.net/developers/how-connect-works/ }
+  - { text: What is Single Sign-On Authentication? And…How Does it Work?, link_text: Watch video, url: https://youtube.com/watch?v=Vp6kx4Sd_E0 }
+  - { text: Why is single sign-on important, link_text: Read article, url: https://www.onelogin.com/learn/why-sso-important }
+apply:
+  - { text: Authenticate with OpenID Connect, link_text: Build app, url: https://developer.okta.com/blog/2023/07/28/oidc_workshop }
+reference:
+  - { text: Get to know OpenID, link_text: Read reference, url: https://openid.net/developers/ }
 ---
+
+
+<section class="space-y-8">
+  <div class="space-y-4 md:max-w-72">
+    <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">Learn about Single Sign-On (SSO)</h2>
+    <p class="text-lg">SSO streamlines logins, boosts security, and is a must-have for enterprise B2B SaaS to reduce friction and accelerate adoption</p>
+  </div>
+  <div class="mt-2 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-fr">
+    {%- for item in learn -%}
+    <div class="max-w-xs p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
+      <a href="{{item.url}}" class="grow">
+        <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.text}}</h3>
+      </a>
+      <a href="item.url" class="border border-sii-border text-sii-light-header dark:text-sii-dark-header rounded-sm w-16 p-0.75 text-center hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary">
+        {{item.link_text}}
+      </a>
+    </div>
+  {%- endfor -%}
+  </div>
+
+  <div class="space-y-4 md:max-w-72">
+    <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">Apply what you learned about SSO</h2>
+    <p class="text-lg">Add SSO to an application in a hands-on tutorial</p>
+  </div>
+  <div class="mt-2 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-fr">
+    {%- for item in apply -%}
+    <div class="max-w-xs p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
+      <a href="{{item.url}}" class="grow">
+        <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.text}}</h3>
+      </a>
+      <a href="item.url" class="border border-sii-border text-sii-light-header dark:text-sii-dark-header rounded-sm w-16 p-0.75 text-center hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary">
+        {{item.link_text}}
+      </a>
+    </div>
+  {%- endfor -%}
+  </div>
+
+  <div class="space-y-4 md:max-w-72">
+    <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">Refer to the specifications</h2>
+    <p class="text-lg">Dive into the references for deeper understanding</p>
+  </div>
+  <div class="mt-2 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-fr">
+    {%- for item in reference -%}
+    <div class="max-w-xs p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
+      <a href="{{item.url}}" class="grow">
+        <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.text}}</h3>
+      </a>
+      <a href="item.url" class="border border-sii-border text-sii-light-header dark:text-sii-dark-header rounded-sm w-16 p-0.75 text-center hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary">
+        {{item.link_text}}
+      </a>
+    </div>
+  {%- endfor -%}
+  </div>
+</section>
+
+
+{# <section class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-9 auto-rows-fr">
+  <div class="md:max-w-60 mb-5 grid justify-between gap-2 grow grid-rows-[2fr_min-content_1fr]">
+    <div class="flex flex-col justify-between">
+      <div class="flex flex-col gap-1.5">
+        <div class="flex gap-2 items-center">
+          <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{ title }}</h2>
+        </div>
+        <p class="mb-3">{{ description }}</p>
+      </div>
+      <div class="inline-flex flex-wrap gap-2">
+        {% if tutorial_url %}
+        {% linkButton tutorial_url, "Tutorial" %}
+        {% endif %}
+        {% if podcast_url %}
+        {% linkButton podcast_url, "Podcast" %}
+        {% endif %}
+        {% if standards_url %}
+        {% linkButton standards_url, "Standard" %}
+        {% endif %}
+      </div>
+    </div>
+
+    <hr class="my-1 h-[1px] bg-sii-border dark:bg-sii-dark-text border-0" />
+
+    <div class="flex flex-col mt-0.5 gap-1">
+      {%- for link in site_urls -%}
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <img src="img/site-icon.svg" class="w-2 h-2 mr-1" />
+          <a href="{{link.url}}">{{link.text}}</a>
+        </div>
+        <img src="img/arrow_forward.svg" class="w-1.5 h-1.5" />
+      </div>
+      {%- endfor -%}
+      {%- for link in video_urls -%}
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <img src="img/video-icon.svg" class="w-2 h-2 mr-1" />
+          <a href="{{link.url}}">{{link.text}}</a>
+        </div>
+        <img src="img/arrow_forward.svg" class="w-1.5 h-1.5" />
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section> #}
 
 
