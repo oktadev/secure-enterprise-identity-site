@@ -31,9 +31,7 @@ reference:
       <a href="{{item.url}}" class="grow">
         <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.text}}</h3>
       </a>
-      <a href="item.url" class="border border-sii-border text-sii-light-header dark:text-sii-dark-header rounded-sm w-16 p-0.75 text-center hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary">
-        {{item.link_text}}
-      </a>
+      {% linkButton item.url, item.link_text %}
     </div>
   {%- endfor -%}
   </div>
@@ -48,9 +46,7 @@ reference:
       <a href="{{item.url}}" class="grow">
         <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.text}}</h3>
       </a>
-      <a href="item.url" class="border border-sii-border text-sii-light-header dark:text-sii-dark-header rounded-sm w-16 p-0.75 text-center hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary">
-        {{item.link_text}}
-      </a>
+      {% linkButton item.url, item.link_text %}
     </div>
   {%- endfor -%}
   </div>
@@ -65,9 +61,7 @@ reference:
       <a href="{{item.url}}" class="grow">
         <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.text}}</h3>
       </a>
-      <a href="item.url" class="border border-sii-border text-sii-light-header dark:text-sii-dark-header rounded-sm w-16 p-0.75 text-center hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary">
-        {{item.link_text}}
-      </a>
+      {% linkButton item.url, item.link_text %}
     </div>
   {%- endfor -%}
   </div>
