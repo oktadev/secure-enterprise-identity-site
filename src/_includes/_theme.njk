@@ -1,5 +1,7 @@
 <script>
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  const themeColor = localStorage.getItem('theme');
+
+  if (themeColor === 'dark' || (themeColor === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.dataset.theme = 'dark';
   } else {
     document.documentElement.dataset.theme = 'light';
@@ -22,19 +24,23 @@
 
   const themeToggleBtn = document.getElementById('theme-toggle');
   themeToggleBtn.addEventListener('click', function () {
-    const theme = document.documentElement.dataset.theme;
+    let theme = document.documentElement.dataset.theme;
 
     themeToggleDarkIcon.classList.toggle('hidden');
     themeToggleLightIcon.classList.toggle('hidden');
 
     if (theme === 'light') {
-      document.documentElement.dataset.theme = 'dark';
+      theme = 'dark';
+      document.documentElement.dataset.theme = theme;
       themeToggle.classList.remove('bg-sii-primary', '-translate-x-1')
       themeToggle.classList.add('bg-sii-dark-hero-background', 'translate-x-full')
     } else {
-      document.documentElement.dataset.theme = 'light';
+      theme = 'light';
+      document.documentElement.dataset.theme = theme;
       themeToggle.classList.add('bg-sii-primary', '-translate-x-1')
       themeToggle.classList.remove('bg-sii-dark-hero-background', 'translate-x-full')
     }
+
+    localStorage.setItem('theme', theme);
   });
 </script>
