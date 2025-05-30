@@ -8,11 +8,25 @@ layout: base
       <h1 class="text-6xl/7 text-sii-light-header dark:text-sii-dark-header">{{ title }}</h1>
       <p class="text-lg">{{ description }}</p>
     </div>
-    <div class="mb-4 p-4 md:p-8 rounded-md bg-sii-hero-background">
-      <img class="max-w-60 max-h-40" src="{{image}}" />
+    <div class="mb-4 p-4 md:p-8 max-w-68 rounded-md bg-sii-hero-background">
+        <img class="w-60 max-h-40 object-scale-down" src="{{image}}" />
     </div>
   </div>
 
-  {{content | safe }}
-</div>
+  <section class="space-y-8">
+    {% if learn %}
+      {% set section = learn %}
+      {% include "_resource_section.njk" %}
+    {% endif %}
 
+    {% if apply %}
+      {% set section = apply %}
+      {% include "_resource_section.njk" %}
+    {% endif %}
+
+    {% if reference %}
+      {% set section = reference %}
+      {% include "_resource_section.njk" %}
+    {% endif %}
+  </section>
+</div>

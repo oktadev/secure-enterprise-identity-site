@@ -1,0 +1,15 @@
+<div class="space-y-4 md:max-w-72">
+  <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{section.title}}</h2>
+  <p class="text-lg">{{section.subtitle}}</p>
+</div>
+<div class="mt-2 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-fr">
+  {%- for item in section.resources -%}
+  <div
+    class="max-w-xs p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
+    <a href="{{item.url}}" class="grow">
+      <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.text}}</h3>
+    </a>
+    {% linkButton item.url, item.link_text %}
+  </div>
+  {%- endfor -%}
+</div>
