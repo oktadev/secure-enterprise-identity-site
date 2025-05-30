@@ -9,64 +9,22 @@ title: Protect from threats
 summary: Safeguard apps by detecting and reacting to suspicious activity
 description: Watch for suspicious activity such unusual signon behavior, performing atypical actions, or making unexpected access control changes. Take action in your app and alert others. Or react to an existing alarm raised by another app. Protect your customers' data and their trust in your platform by proactively detecting or by reacting to threats.
 image: img/undraw_secure-server_lz9x.svg
-tutorial_url: https://developer.okta.com/blog/2024/04/30/express-universal-logout
-standards_url: https://www.ietf.org/archive/id/draft-parecki-oauth-global-token-revocation-01.html
-podcast_url: https://www.youtube.com/watch?v=PfkQmwNZ6S8
-video_urls:
-  - { text: Global Token Revocation podcast, url: https://www.youtube.com/watch?v=2snTFRFsAs8 }
-site_urls:
-  - { text: CAEP Transmitter, url: https://caep.dev/ }
+learn:
+  title: Learn about threat management
+  subtitle: Protect your apps by reacting to suspicious activity using Global Token Revocation. Prevent the impact of threats by notifying your ecosystem using the Shared Signals Framework.
+  resources:
+    - { text: Global Token Revocation podcast, link_text: Listen to the podcast, url: https://youtube.com/watch?v=Vp6kx4Sd_E0 }
+    - { text: CAEP Transmitter, link_text: Explore site, url: https://www.onelogin.com/learn/why-sso-important }
+    - { text: Another podcast, link_text: Listen to the podcast, url: https://www.youtube.com/watch?v=PfkQmwNZ6S8 }
+apply:
+  title: Build threat safety into your application
+  subtitle: Protect your app by revoking access
+  resources:
+    - { text: How to Instantly Sign a User Out across All Your Apps, link_text: Build app, url: https://developer.okta.com/blog/2024/04/30/express-universal-logout }
+reference:
+  title: Read the specs
+  subtitle: Get into the weeds and learn all the things
+  resources:
+    - { text: Global Token Revocation, link_text: Read reference, url: https://www.ietf.org/archive/id/draft-parecki-oauth-global-token-revocation-01.html }
 ---
-
-<section class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-9 auto-rows-fr">
-  {# {%- for item in collections.topic | sort(attribute='data.order') -%} #}
-  <div class="md:max-w-60 mb-5 grid justify-between gap-2 grow grid-rows-[2fr_min-content_1fr]">
-    <div class="flex flex-col justify-between">
-      <div class="flex flex-col gap-1.5">
-        <div class="flex gap-2 items-center">
-          {# {% svgsprite %}
-          {% svg item.data.fragment, "w-3 h-3 p-0.5 bg-sii-primary rounded-md fill-sii-light-background
-          **:text-sii-primary" %} #}
-          <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{ title }}</h2>
-        </div>
-        <p class="mb-3">{{ description }}</p>
-      </div>
-      <div class="inline-flex flex-wrap gap-2">
-        {% if tutorial_url %}
-        {% linkButton tutorial_url, "Tutorial" %}
-        {% endif %}
-        {% if podcast_url %}
-        {% linkButton podcast_url, "Podcast" %}
-        {% endif %}
-        {% if standards_url %}
-        {% linkButton standards_url, "Standard" %}
-        {% endif %}
-      </div>
-    </div>
-
-    <hr class="my-1 h-[1px] bg-sii-border dark:bg-sii-dark-text border-0" />
-
-    <div class="flex flex-col mt-0.5 gap-1">
-      {%- for link in site_urls -%}
-      <div class="flex justify-between items-center">
-        <div class="flex items-center">
-          <img src="img/site-icon.svg" class="w-2 h-2 mr-1" />
-          <a href="{{link.url}}">{{link.text}}</a>
-        </div>
-        <img src="img/arrow_forward.svg" class="w-1.5 h-1.5" />
-      </div>
-      {%- endfor -%}
-      {%- for link in video_urls -%}
-      <div class="flex justify-between items-center">
-        <div class="flex items-center">
-          <img src="img/video-icon.svg" class="w-2 h-2 mr-1" />
-          <a href="{{link.url}}">{{link.text}}</a>
-        </div>
-        <img src="img/arrow_forward.svg" class="w-1.5 h-1.5" />
-      </div>
-      {%- endfor -%}
-    </div>
-  </div>
-  {# {%- endfor -%} #}
-</section>
 

@@ -4,20 +4,49 @@ eleventyNavigation:
   key: Home
   order: 1
 eleventyExcludeFromCollections: true
+site_value: Navigate the complexities of enterprise identity management. We offer guidance and best practices to simplify implementation and help you build secure, scalable identity solutions for your applications, avoiding common pitfalls along the way. Discover resources for developers, created by Okta developer and industry experts. Our aim is to demystify and clarify identity management for you.
+topics:
+  title: Explore enterprise identity concepts
+  subtitle: Maturing software applications have unique identity management solution needs. Explore concepts that elevate applications into enterprise-level software.
+foundations:
+  title: Revisit identity foundations
+  subtitle: Build upon identity fundamentals to scale your app for enterprise needs.
+  resources:
+    - { title: Why is identity important?, link: https://stackoverflow.blog/2020/12/21/how-digital-identity-protects-your-software/ }
+    - { title: What is enterprise identity?, link: https://www.linkedin.com/pulse/what-main-differences-between-employeepartner-iam-vs-customer-seal }
+    - { title: Terminology and vocabulary overview, link: https://developer.okta.com/docs/concepts/iam-overview-iam-terminology/ }
+    - { title: OAuth and OIDC, link: https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc }
 ---
 
 <div class="space-y-12">
   <div class="flex justify-between flex-wrap-reverse space-x-4">
     <div class="md:max-w-68 space-y-4">
-      <h1 class="text-6xl/7 text-sii-light-header dark:text-sii-dark-header">Enterprise Identity for Developers</h1>
-      <p class="text-lg">Navigate the complexities of enterprise identity management. We offer guidance and best practices to simplify implementation and help you build secure, scalable identity solutions for your applications, avoiding common pitfalls along the way. Discover resources for developers, created by Okta developer and industry experts. Our aim is to demystify and clarify identity management for you.</p>
+      <h1 class="text-6xl/7 text-sii-light-header dark:text-sii-dark-header">{{meta.title}}</h1>
+      <p class="text-lg">{{site_value}}</p>
     </div>
     <div class="mb-4 p-4 md:p-8 rounded-md bg-sii-hero-background">
-      <img class="w-60" src="img/undraw_two-factor-authentication_8tds.svg" />
+      <img class="w-60 object-contain" src="img/undraw_two-factor-authentication_8tds.svg" />
     </div>
   </div>
 
+  {% set topics = topics %}
   {% include "_topics.njk" %}
-  {% include "_foundations.njk" %}
+
+  <section class="space-y-8">
+  <div class="space-y-4 md:max-w-72">
+    <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{ foundations.title }}</h2>
+    <p class="text-lg">{{ foundations.subtitle }}</p>
+  </div>
+  <div class="mt-2 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-fr">
+    {%- for item in foundations.resources -%}
+    <div class="max-w-xs p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
+      <a href="{{item.link}}" class="grow">
+        <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.title}}</h3>
+      </a>
+      {% linkButton item.link, "Learn" %}
+    </div>
+  {%- endfor -%}
+  </div>
+</section>
 </div>
 
