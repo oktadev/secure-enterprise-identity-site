@@ -1,6 +1,7 @@
 import { HtmlBasePlugin } from '@11ty/eleventy'
 import EleventyVitePlugin from '@11ty/eleventy-plugin-vite'
-import pluginNavigation from "@11ty/eleventy-navigation";
+import pluginNavigation from '@11ty/eleventy-navigation';
+import pluginFeatherIcons from 'eleventy-plugin-feathericons';
 import tailwindcss from '@tailwindcss/vite'
 
 import shortcodes from './utils/shortcodes.js'
@@ -16,6 +17,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPlugin(HtmlBasePlugin);
   eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(pluginFeatherIcons);
 
   eleventyConfig.addPlugin(EleventyVitePlugin, {
     viteOptions: {

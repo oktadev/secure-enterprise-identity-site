@@ -1,15 +1,37 @@
-<div class="space-y-4 md:max-w-72">
-  <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{section.title}}</h2>
-  <p class="text-lg">{{section.subtitle}}</p>
-</div>
-<div class="mt-2 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-fr">
-  {%- for item in section.resources -%}
-  <div
-    class="max-w-xs p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
-    <a href="{{item.url}}" class="grow">
-      <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.text}}</h3>
-    </a>
-    {% linkButton item.url, item.link_text %}
+<div class="space-y-8">
+  <div class="space-y-4">
+    <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{section.title}}</h2>
+    <p class="text-lg">{{section.subtitle}}</p>
   </div>
-  {%- endfor -%}
+  <div class="mt-2 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-fr">
+    {%- for item in section.resources -%}
+    <div
+      class="max-w-xs p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
+      <div class="self-center bg-sii-primary p-2.5 rounded-full">
+        {% switch item.icon %}
+        {% case "book" %}
+        {% feather "book", { "stroke": "#fbfbfb" } %}
+        {% case "video" %}
+        {% feather "video", { "stroke": "#fbfbfb" } %}
+        {% case "explore" %}
+        {% feather "compass", { "stroke": "#fbfbfb" } %}
+        {% case "code" %}
+        {% feather "code", { "stroke": "#fbfbfb" } %}
+        {% case "bookmark" %}
+        {% feather "bookmark", { "stroke": "#fbfbfb" } %}
+        {% default %}
+        {% feather "lock", { "stroke": "#fbfbfb" } %}
+        {% endswitch %}
+      </div>
+      <a href="{{item.url}}" class="grow">
+        <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.text}}</h3>
+      </a>
+      <a href="{{item.url}}"
+        class="border border-sii-border text-sii-light-header dark:text-sii-dark-header rounded-sm w-24 p-0.75 text-center hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary">
+        <div class="inline-flex space-between">{{item.link_text}} &nbsp; {% feather "external-link", {"stroke-width": 1,
+          width: 18 } %}</div>
+      </a>
+    </div>
+    {%- endfor -%}
+  </div>
 </div>

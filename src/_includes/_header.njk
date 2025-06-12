@@ -1,5 +1,5 @@
 <header>
-  <div class="flex justify-between">
+  <div class="2xl:mb-12 flex justify-between">
 
     <a class="flex text-sii-light-text dark:text-sii-dark-text" href="/">
       <div class="w-4">
@@ -11,7 +11,7 @@
 
   </div>
 
-  <nav class="mt-2 sr-only sm:not-sr-only">
+  {# <nav class="mt-2 sr-only sm:not-sr-only">
     <ul class="flex justify-center text-sm space-x-1 xs:space-x-3">
     {%- for entry in collections.all | eleventyNavigation | sort(attribute='data.order') %}
       <li>
@@ -19,7 +19,7 @@
       </li>
     {%- endfor %}
     </ul>
-  </nav>
+  </nav> #}
 
 
 </header>
