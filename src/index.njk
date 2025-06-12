@@ -18,14 +18,14 @@ foundations:
     - { title: OAuth and OIDC, link: https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc }
 ---
 
-<div class="space-y-12">
+<div class="space-y-16">
   <div class="flex justify-between flex-wrap-reverse space-x-4">
     <div class="md:max-w-68 space-y-4">
-      <h1 class="text-6xl/7 text-sii-light-header dark:text-sii-dark-header">{{meta.title}}</h1>
+      <h1 class="text-6xl/9 text-sii-light-header dark:text-sii-dark-header">{{meta.title}}</h1>
       <p class="text-lg">{{site_value}}</p>
     </div>
     <div class="mb-4 p-4 md:p-8 rounded-md bg-sii-hero-background">
-      <img class="w-60 object-contain" src="img/undraw_two-factor-authentication_8tds.svg" />
+      <img class="w-60 object-contain" src="img/undraw_two-factor-authentication_8tds.svg" alt="An illustration of interaction with a mobile phone showing a two-factor authentication process."/>
     </div>
   </div>
 
@@ -33,17 +33,23 @@ foundations:
   {% include "_topics.njk" %}
 
   <section class="space-y-8">
-  <div class="space-y-4 md:max-w-72">
+  <div class="space-y-4">
     <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{ foundations.title }}</h2>
     <p class="text-lg">{{ foundations.subtitle }}</p>
   </div>
   <div class="mt-2 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-fr">
     {%- for item in foundations.resources -%}
     <div class="max-w-xs p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
+      <div class="self-center bg-sii-primary p-2.5 rounded-full">
+      {% feather "lock", { "stroke": "#fbfbfb" } %}
+      </div>
       <a href="{{item.link}}" class="grow">
         <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.title}}</h3>
       </a>
-      {% linkButton item.link, "Learn" %}
+      <a href="{{item.link}}" class="border border-sii-border text-sii-light-header dark:text-sii-dark-header rounded-sm w-16 p-0.75 text-center hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary">
+        <div class="inline-flex space-between">Learn more &nbsp; {% feather "external-link", {"stroke-width": 1, width: 18 } %}</div>
+      </a>
+
     </div>
   {%- endfor -%}
   </div>
