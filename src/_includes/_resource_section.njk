@@ -5,22 +5,21 @@
   </div>
   <div class="mt-2 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-fr">
     {%- for item in section.resources -%}
-    <div
-      class="max-w-xs p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
+    <div class="max-w-xs p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
       <div class="self-center bg-sii-primary p-2.5 rounded-full">
         {% switch item.icon %}
-        {% case "book" %}
-        {% feather "book", { "stroke": "#fbfbfb" } %}
-        {% case "video" %}
-        {% feather "video", { "stroke": "#fbfbfb" } %}
-        {% case "explore" %}
-        {% feather "compass", { "stroke": "#fbfbfb" } %}
-        {% case "code" %}
-        {% feather "code", { "stroke": "#fbfbfb" } %}
-        {% case "bookmark" %}
-        {% feather "bookmark", { "stroke": "#fbfbfb" } %}
-        {% default %}
-        {% feather "lock", { "stroke": "#fbfbfb" } %}
+          {% case "book" %}
+            {% feather "book", { "stroke": "#fbfbfb" } %}
+          {% case "video" %}
+            {% feather "video", { "stroke": "#fbfbfb" } %}
+          {% case "explore" %}
+            {% feather "compass", { "stroke": "#fbfbfb" } %}
+          {% case "code" %}
+            {% feather "code", { "stroke": "#fbfbfb" } %}
+          {% case "bookmark" %}
+            {% feather "bookmark", { "stroke": "#fbfbfb" } %}
+          {% default %}
+            {% feather "lock", { "stroke": "#fbfbfb" } %}
         {% endswitch %}
       </div>
       <a href="{{item.url}}" class="grow">
