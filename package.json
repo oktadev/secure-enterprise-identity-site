@@ -14,11 +14,26 @@
   "description": "Secure enterprise identity for developers",
   "type": "module",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.1",
+    "@11ty/eleventy": "^3.1.0",
     "@11ty/eleventy-navigation": "^1.0.4",
     "@11ty/eleventy-plugin-vite": "^6.0.0",
-    "@tailwindcss/vite": "^4.1.10",
+    "@tailwindcss/vite": "^4.1.8",
     "eleventy-plugin-feathericons": "^1.1.0",
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^4.1.8"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-android-arm-eabi": "4.43.0",
+    "@rollup/rollup-android-arm64": "4.43.0",
+    "@rollup/rollup-darwin-arm64": "4.43.0",
+    "@rollup/rollup-darwin-x64": "4.43.0",
+    "@rollup/rollup-linux-arm-gnueabihf": "4.43.0",
+    "@rollup/rollup-linux-arm64-gnu": "4.43.0",
+    "@rollup/rollup-linux-arm64-musl": "4.43.0",
+    "@rollup/rollup-linux-riscv64-gnu": "4.43.0",
+    "@rollup/rollup-linux-x64-gnu": "4.43.0",
+    "@rollup/rollup-linux-x64-musl": "4.43.0",
+    "@rollup/rollup-win32-arm64-msvc": "4.43.0",
+    "@rollup/rollup-win32-ia32-msvc": "4.43.0",
+    "@rollup/rollup-win32-x64-msvc": "4.43.0"
   }
 }
