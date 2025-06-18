@@ -5,15 +5,15 @@ layout: base
 <div class="space-y-12">
   <div class="flex justify-between flex-wrap-reverse space-x-4">
     <div class="md:max-w-68 space-y-4">
-      <h1 class="text-6xl/7 text-sii-light-header dark:text-sii-dark-header">{{ title }}</h1>
+      <h1 class="text-6xl/9 text-sii-light-header dark:text-sii-dark-header">{{ title }}</h1>
       <p class="text-lg">{{ description }}</p>
     </div>
-    <div class="mb-4 p-4 md:p-8 max-w-68 rounded-md bg-sii-hero-background">
-        <img class="w-60 max-h-40 object-scale-down" src="{{image}}" />
+    <div class="mb-4 p-4 md:p-8 max-w-2xl rounded-md bg-sii-hero-background">
+        <img class="h-20 md:h-36 w-60 object-scale-down" src="{{image}}" alt="{{image_alt_text}}" />
     </div>
   </div>
 
-  <section class="space-y-8">
+  <section class="space-y-16">
     {% if learn %}
       {% set section = learn %}
       {% include "_resource_section.njk" %}
