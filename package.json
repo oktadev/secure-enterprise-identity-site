@@ -20,5 +20,8 @@
     "@tailwindcss/vite": "^4.1.10",
     "eleventy-plugin-feathericons": "^1.1.0",
     "tailwindcss": "^4.1.10"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.43.0"
   }
 }
