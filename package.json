@@ -17,8 +17,8 @@
     "@11ty/eleventy": "^3.1.0",
     "@11ty/eleventy-navigation": "^1.0.4",
     "@11ty/eleventy-plugin-vite": "^6.0.0",
-    "@tailwindcss/vite": "^4.1.10",
+    "@tailwindcss/vite": "^4.1.8",
     "eleventy-plugin-feathericons": "^1.1.0",
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^4.1.8"
   }
 }
