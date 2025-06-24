@@ -22,7 +22,7 @@
     "tailwindcss": "^4.1.8"
   },
   "optionalDependencies": {
-    "@rollup/rollup-android-arm-eabi": "4.43.0",
+    "@rollup/rollup-android-arm-eabi": "4.44.0",
     "@rollup/rollup-android-arm64": "4.43.0",
     "@rollup/rollup-darwin-arm64": "4.43.0",
     "@rollup/rollup-darwin-x64": "4.43.0",
