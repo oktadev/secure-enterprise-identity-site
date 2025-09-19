@@ -28,6 +28,13 @@
 
   {% include "_cookie_script.njk" %}
 
+  <!-- Adobe Tag Manager -->
+  {% if process.env.VERCEL_TARGET_ENV == "production" %}
+    <script src="https://assets.adobedtm.com/6bb3f7663515/fea558f43eb7/launch-be034d63605e.min.js" async></script>
+  {% else %}
+    <script src="https://assets.adobedtm.com/6bb3f7663515/fea558f43eb7/launch-e7dc4271fcde-development.min.js" async></script>
+  {% endif %}
+
 </head>
 <body
   class="min-w-xs font-display min-h-screen flex flex-col bg-sii-light-background dark:bg-sii-dark-background text-sii-light-text dark:text-sii-dark-text">
