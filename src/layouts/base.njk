@@ -15,25 +15,7 @@
   {%- css %}{% include "public/css/index.css" %}{% endcss %}
   <style>{% getBundle "css" %}</style>
 
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-NTKK42MJ');</script>
-  <!-- End Google Tag Manager -->
-
-  {% include "_cookie_script.njk" %}
-
-  <!-- Adobe Tag Manager -->
-  {% if process.env.VERCEL_TARGET_ENV == "production" %}
-    <script src="https://assets.adobedtm.com/6bb3f7663515/fea558f43eb7/launch-be034d63605e.min.js" async></script>
-  {% else %}
-    <script src="https://assets.adobedtm.com/6bb3f7663515/fea558f43eb7/launch-e7dc4271fcde-development.min.js" async></script>
-  {% endif %}
+  {% include "_analytics.njk" %}
 
 </head>
 <body
