@@ -1,6 +1,0 @@
-[build]
-publish = "_site"
-command = "npm run build"
-
-[context.deploy-preview.environment]
-command = "BASE_URL=\"$DEPLOY_PRIME_URL\"; npm run build"
