@@ -1,6 +1,5 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "_site",
-  "framework": null,
-  "nodeVersion": "22"
+  "framework": null
 }
