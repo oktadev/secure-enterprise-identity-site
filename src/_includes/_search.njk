@@ -1,0 +1,77 @@
+{%- set searchIndex = [] -%}
+{%- for topicPage in collections.topic | sort(attribute='data.order') -%}
+  {%- set _ = searchIndex.push({ title: topicPage.data.title, url: topicPage.page.url, category: topicPage.data.title, type: "category" }) -%}
+  {%- for sectionName in ["learn", "apply", "reference"] -%}
+    {%- set section = topicPage.data[sectionName] -%}
+    {%- if section and section.resources -%}
+      {%- for r in section.resources -%}
+        {%- set _ = searchIndex.push({ title: r.text, url: r.url, category: topicPage.data.title, type: "resource" }) -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+<div class="relative">
+  <div class="flex items-center gap-3 border border-sii-border dark:border-sii-dark-border rounded-full px-4 py-3 bg-sii-light-background dark:bg-sii-dark-background">
+    {% feather "search", { "stroke-width": 1.5, width: 18, "class": "text-sii-light-text dark:text-sii-dark-text shrink-0" } %}
+    <label for="site-search" class="sr-only">Search identity concepts, standards, and guides</label>
+    <input id="site-search" type="search" autocomplete="off"
+      placeholder="Search identity concepts, standards, and guides&hellip;"
+      class="text-sm text-sii-light-header dark:text-sii-dark-header bg-transparent outline-none text-left grow placeholder:text-sii-light-text dark:placeholder:text-sii-dark-text" />
+  </div>
+  <ul id="site-search-results"
+    class="hidden absolute z-10 mt-2 w-full max-h-80 overflow-y-auto bg-sii-light-background dark:bg-sii-dark-background border border-sii-border dark:border-sii-dark-border rounded-lg shadow-lg text-left">
+  </ul>
+</div>
+
+<script>
+  (function () {
+    var searchIndex = {{ searchIndex | dump | safe }};
+    var input = document.getElementById('site-search');
+    var results = document.getElementById('site-search-results');
+
+    function render(matches) {
+      results.innerHTML = '';
+      if (!matches.length) {
+        results.classList.add('hidden');
+        return;
+      }
+      matches.slice(0, 8).forEach(function (item) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = item.url;
+        a.className = 'block px-4 py-2 text-sm text-sii-light-header dark:text-sii-dark-header hover:bg-sii-light-muted dark:hover:bg-sii-dark-muted';
+        if (item.type === 'resource') {
+          a.target = '_blank';
+          a.rel = 'noopener';
+        }
+        a.appendChild(document.createTextNode(item.title + ' '));
+        var categorySpan = document.createElement('span');
+        categorySpan.className = 'text-sii-light-text dark:text-sii-dark-text text-xs';
+        categorySpan.textContent = '— ' + item.category;
+        a.appendChild(categorySpan);
+        li.appendChild(a);
+        results.appendChild(li);
+      });
+      results.classList.remove('hidden');
+    }
+
+    input.addEventListener('input', function () {
+      var q = input.value.trim().toLowerCase();
+      if (!q) {
+        results.classList.add('hidden');
+        return;
+      }
+      var matches = searchIndex.filter(function (item) {
+        return item.title.toLowerCase().indexOf(q) !== -1;
+      });
+      render(matches);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('#site-search') && !e.target.closest('#site-search-results')) {
+        results.classList.add('hidden');
+      }
+    });
+  })();
+</script>
