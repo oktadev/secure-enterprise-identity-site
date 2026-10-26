@@ -1,27 +1,17 @@
 <header>
-  <div class="2xl:mb-12 flex justify-between">
-
-    <a class="flex text-sii-light-text dark:text-sii-dark-text" href="/">
+  <div class="flex justify-between items-center gap-3">
+    <a class="flex items-center gap-2 text-sii-light-text dark:text-sii-dark-text" href="/">
       <div class="w-4">
         <img class="w-3" src="/img/favicon.svg" alt="Enterprise Identity for Developers logo"/>
       </div>
       <span class="sr-only sm:not-sr-only text-sii-light-header dark:text-sii-dark-header text-lg">{{meta.title}}</span>
     </a>
-    {% include "../elements/themeSwitch.njk"%}
 
+    <div class="flex items-center gap-3">
+      {% include "../elements/themeSwitch.njk" %}
+      <a href="#identity-topics" class="bg-sii-light-header dark:bg-sii-dark-header text-sii-light-background dark:text-sii-dark-background rounded-full px-3 py-1 text-sm font-medium transition-opacity duration-200 hover:opacity-85">
+        Explore resources
+      </a>
+    </div>
   </div>
-
-  {# <nav class="mt-2 sr-only sm:not-sr-only">
-    <ul class="flex justify-center text-sm space-x-1 xs:space-x-3">
-    {%- for entry in collections.all | eleventyNavigation | sort(attribute='data.order') %}
-      <li>
-        <a class="text-nowrap underline text-sii-light-header dark:text-sii-dark-header hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
-      </li>
-    {%- endfor %}
-    </ul>
-  </nav> #}
-
-
 </header>
-
-

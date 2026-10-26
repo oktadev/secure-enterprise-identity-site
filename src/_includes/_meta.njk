@@ -1,4 +1,4 @@
-<title>{{meta.title}}</title>
+<title>{% if title %}{{ title }} | {{meta.title}}{% else %}{{meta.title}}{% endif %}</title>
 
 <!-- favicon -->
 <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
@@ -8,20 +8,21 @@
 <link rel="manifest" href="/img/site.webmanifest" />
 
 <!-- Primary Meta Tags -->
-<meta name="title" content="{{meta.title}}" />
-<meta name="description" content="{{meta.description}}" />
+<meta name="title" content="{% if title %}{{ title }} | {{meta.title}}{% else %}{{meta.title}}{% endif %}" />
+<meta name="description" content="{{ description or summary or meta.description }}" />
 <meta name="keywords" content="{{meta.keywords}}">
+<link rel="canonical" href="{{ (meta.url + page.url) | replace("//", "/") | replace("https:/", "https://") }}" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="{{meta.url}}" />
-<meta property="og:title" content="{{meta.title}}" />
-<meta property="og:description" content="{{meta.description}}" />
+<meta property="og:url" content="{{ (meta.url + page.url) | replace("//", "/") | replace("https:/", "https://") }}" />
+<meta property="og:title" content="{% if title %}{{ title }} | {{meta.title}}{% else %}{{meta.title}}{% endif %}" />
+<meta property="og:description" content="{{ description or summary or meta.description }}" />
 <meta property="og:image" content="{{meta.image}}" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="{{meta.url}}" />
-<meta property="twitter:title" content="{{meta.title}}" />
-<meta property="twitter:description" content="{{meta.description}}" />
+<meta property="twitter:url" content="{{ (meta.url + page.url) | replace("//", "/") | replace("https:/", "https://") }}" />
+<meta property="twitter:title" content="{% if title %}{{ title }} | {{meta.title}}{% else %}{{meta.title}}{% endif %}" />
+<meta property="twitter:description" content="{{ description or summary or meta.description }}" />
 <meta property="twitter:image" content="{{meta.image}}" />

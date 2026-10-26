@@ -3,21 +3,15 @@
     <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{topics.title}}</h2>
     <p class="text-lg">{{topics.subtitle}}</p>
   </div>
-  <div class="mt-2 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 auto-rows-fr">
+  <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {%- for item in collections.topic | sort(attribute='data.order') -%}
-    <div class="max-w-md p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
-      <div class="p-2 sm:p-4 bg-sii-hero-background rounded-md h-16 sm:h-20 md:h-28 flex justify-center align-middle">
-        <a class="" href="{{item.page.url}}">
-          <img class="h-12 md:h-20" src="{{item.data.image}}" alt="{{item.data.imagetext}}"/>
-        </a>
+    <a href="{{item.page.url}}" class="group p-5 flex flex-col gap-4 bg-sii-light-muted dark:bg-sii-dark-muted rounded-xl transition-all duration-200 hover:shadow-md hover:-translate-y-0.5">
+      <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.data.title}}</h3>
+      <p class="text-sii-light-text dark:text-sii-dark-text grow">{{item.data.summary}}</p>
+      <div class="bg-sii-primary p-2.5 rounded-full w-fit self-end">
+        {% feather "arrow-up-right", { "stroke-width": 1.5, "stroke": "#fbfbfb" } %}
       </div>
-      <a href="{{item.page.url}}">
-        <h3 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{item.data.title}}</h3>
-      </a>
-      <p class="justify-self-start grow">{{item.data.summary}}</p>
-      {% linkButton item.page.url, "Explore" %}
-
-    </div>
+    </a>
   {%- endfor -%}
   </div>
 </section>

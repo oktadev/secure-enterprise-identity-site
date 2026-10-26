@@ -19,37 +19,47 @@ foundations:
 ---
 
 <div class="space-y-16">
-  <div class="flex justify-between flex-wrap-reverse space-x-4">
-    <div class="md:max-w-68 space-y-4">
-      <h1 class="text-6xl/9 text-sii-light-header dark:text-sii-dark-header">{{meta.title}}</h1>
-      <p class="text-lg">{{site_value}}</p>
+  <div class="text-center max-w-2xl mx-auto space-y-5">
+    <h1 class="text-5xl sm:text-6xl leading-[1.15] text-sii-light-header dark:text-sii-dark-header">{{meta.title}}</h1>
+    <p class="text-lg text-sii-light-text dark:text-sii-dark-text">{{site_value}}</p>
+
+    <div class="flex items-center gap-3 border border-sii-border dark:border-sii-dark-border rounded-full px-4 py-3 bg-sii-light-background dark:bg-sii-dark-background">
+      {% feather "search", { "stroke-width": 1.5, width: 18, "class": "text-sii-light-text dark:text-sii-dark-text shrink-0" } %}
+      <span class="text-sm text-sii-light-text dark:text-sii-dark-text text-left grow">Search identity concepts, standards, and guides&hellip;</span>
     </div>
-    <div class="mb-4 p-4 md:p-8 rounded-md bg-sii-hero-background">
-      <img class="w-60 object-contain" src="/img/undraw_two-factor-authentication_8tds.svg" alt="An illustration of interaction with a mobile phone showing a two-factor authentication process."/>
+
+    <div class="flex flex-wrap justify-center gap-2">
+      {%- for entry in collections.all | eleventyNavigation | sort(attribute='data.order') %}
+        {%- if entry.url != "/" -%}
+      <a href="{{ entry.url }}" class="bg-sii-light-muted dark:bg-sii-dark-muted text-sii-light-header dark:text-sii-dark-header rounded-full px-3 py-1.5 text-sm transition-colors duration-200 hover:bg-sii-light-accent">{{ entry.title }}</a>
+        {%- endif -%}
+      {%- endfor %}
     </div>
   </div>
 
-  {% set topics = topics %}
-  {% include "_topics.njk" %}
+  <div id="identity-topics">
+    {% set topics = topics %}
+    {% include "_topics.njk" %}
+  </div>
 
   <section class="space-y-8">
   <div class="space-y-4">
     <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{ foundations.title }}</h2>
     <p class="text-lg">{{ foundations.subtitle }}</p>
   </div>
-  <div class="mt-2 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-fr">
+  <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
     {%- for item in foundations.resources -%}
-    <div class="max-w-xs p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
-      <div class="self-center bg-sii-primary p-2.5 rounded-full">
-      {% feather "lock", { "stroke": "#fbfbfb" } %}
+    <div class="h-full w-full p-5 flex flex-col gap-4 bg-sii-light-background border border-sii-border rounded-lg transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 dark:bg-sii-dark-background dark:border-sii-dark-border">
+      <div class="self-start bg-sii-primary p-2.5 rounded-full">
+        {% feather "lock", { "stroke": "#fbfbfb" } %}
       </div>
-      <a href="{{item.link}}" class="grow">
-        <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.title}}</h3>
+      <a href="{{item.link}}" target="_blank" rel="noopener" class="grow rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
+        <h3 class="text-sii-light-header dark:text-sii-dark-header text-xl leading-snug">{{item.title}}</h3>
       </a>
-      <a href="{{item.link}}" class="border border-sii-border text-sii-light-header dark:text-sii-dark-header rounded-sm w-16 p-0.75 text-center hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary">
-        <div class="inline-flex space-between">Learn more &nbsp; {% feather "external-link", {"stroke-width": 1, width: 18 } %}</div>
+      <a href="{{item.link}}" target="_blank" rel="noopener"
+        class="inline-flex items-center gap-1.5 border border-sii-border dark:border-sii-dark-border text-sii-light-header dark:text-sii-dark-header rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-200 hover:border-sii-primary hover:text-sii-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary mt-auto w-fit">
+        Learn more {% feather "external-link", {"stroke-width": 1.5, width: 14} %}
       </a>
-
     </div>
   {%- endfor -%}
   </div>

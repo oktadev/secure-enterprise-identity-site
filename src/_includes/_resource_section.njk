@@ -1,36 +1,62 @@
+{% macro resource_card(item) %}
+<div class="h-full w-full p-5 flex flex-col gap-4 bg-sii-light-background border border-sii-border rounded-lg transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 dark:bg-sii-dark-background dark:border-sii-dark-border">
+  <div class="self-start bg-sii-primary p-2.5 rounded-full">
+    {% switch item.icon %}
+      {% case "book" %}
+        {% feather "book", { "stroke": "#fbfbfb" } %}
+      {% case "video" %}
+        {% feather "video", { "stroke": "#fbfbfb" } %}
+      {% case "explore" %}
+        {% feather "compass", { "stroke": "#fbfbfb" } %}
+      {% case "code" %}
+        {% feather "code", { "stroke": "#fbfbfb" } %}
+      {% case "bookmark" %}
+        {% feather "bookmark", { "stroke": "#fbfbfb" } %}
+      {% default %}
+        {% feather "lock", { "stroke": "#fbfbfb" } %}
+    {% endswitch %}
+  </div>
+  <a href="{{item.url}}" target="_blank" rel="noopener" class="grow rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
+    <h3 class="text-sii-light-header dark:text-sii-dark-header text-xl leading-snug">{{item.text}}</h3>
+  </a>
+  <div class="flex flex-wrap gap-2 mt-auto">
+    <a href="{{item.url}}" target="_blank" rel="noopener"
+      class="inline-flex items-center gap-1 whitespace-nowrap border border-sii-border dark:border-sii-dark-border text-sii-light-header dark:text-sii-dark-header rounded-full px-2.5 py-1.5 text-xs font-medium transition-colors duration-200 hover:border-sii-primary hover:text-sii-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
+      {{item.link_text}} {% feather "external-link", {"stroke-width": 1.5, width: 12} %}
+    </a>
+    {%- if item.secondary_url -%}
+    <a href="{{item.secondary_url}}" target="_blank" rel="noopener"
+      class="inline-flex items-center gap-1 whitespace-nowrap border border-sii-border dark:border-sii-dark-border text-sii-light-header dark:text-sii-dark-header rounded-full px-2.5 py-1.5 text-xs font-medium transition-colors duration-200 hover:border-sii-primary hover:text-sii-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
+      {{item.secondary_link_text}} {% feather "external-link", {"stroke-width": 1.5, width: 12} %}
+    </a>
+    {%- endif -%}
+  </div>
+</div>
+{% endmacro %}
+
 <div class="space-y-8">
   <div class="space-y-4">
     <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{section.title}}</h2>
-    <p class="text-lg">{{section.subtitle}}</p>
+    <p class="text-lg text-sii-light-text dark:text-sii-dark-text">{{section.subtitle}}</p>
   </div>
-  <div class="mt-2 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-fr">
-    {%- for item in section.resources -%}
-    <div class="max-w-xs p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
-      <div class="self-center bg-sii-primary p-2.5 rounded-full">
-        {% switch item.icon %}
-          {% case "book" %}
-            {% feather "book", { "stroke": "#fbfbfb" } %}
-          {% case "video" %}
-            {% feather "video", { "stroke": "#fbfbfb" } %}
-          {% case "explore" %}
-            {% feather "compass", { "stroke": "#fbfbfb" } %}
-          {% case "code" %}
-            {% feather "code", { "stroke": "#fbfbfb" } %}
-          {% case "bookmark" %}
-            {% feather "bookmark", { "stroke": "#fbfbfb" } %}
-          {% default %}
-            {% feather "lock", { "stroke": "#fbfbfb" } %}
-        {% endswitch %}
+  {%- if section.groups -%}
+  <div class="space-y-10">
+    {%- for group in section.groups -%}
+    <div class="space-y-4">
+      <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{group.title}}</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {%- for item in group.resources -%}
+          {{ resource_card(item) }}
+        {%- endfor -%}
       </div>
-      <a href="{{item.url}}" class="grow">
-        <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{item.text}}</h3>
-      </a>
-      <a href="{{item.url}}"
-        class="border border-sii-border text-sii-light-header dark:text-sii-dark-header rounded-sm w-24 p-0.75 text-center hover:border-sii-primary  hover:text-sii-primary active:border-sii-primary active:text-sii-primary">
-        <div class="inline-flex space-between">{{item.link_text}} &nbsp; {% feather "external-link", {"stroke-width": 1,
-          width: 18 } %}</div>
-      </a>
     </div>
     {%- endfor -%}
   </div>
+  {%- else -%}
+  <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    {%- for item in section.resources -%}
+      {{ resource_card(item) }}
+    {%- endfor -%}
+  </div>
+  {%- endif -%}
 </div>
