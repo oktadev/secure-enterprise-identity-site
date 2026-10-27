@@ -12,54 +12,120 @@ foundations:
   title: Revisit identity foundations
   subtitle: Build upon identity fundamentals to scale your app for enterprise needs.
   resources:
-    - { title: Why is identity important?, link: https://stackoverflow.blog/2020/12/21/how-digital-identity-protects-your-software/ }
-    - { title: What is enterprise identity?, link: https://www.linkedin.com/pulse/what-main-differences-between-employeepartner-iam-vs-customer-seal }
-    - { title: Terminology and vocabulary overview, link: https://developer.okta.com/docs/concepts/iam-overview-iam-terminology/ }
-    - { title: OAuth and OIDC, link: https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc }
+    - { title: Why is identity important?, link: https://stackoverflow.blog/2020/12/21/how-digital-identity-protects-your-software/, icon: key }
+    - { title: What is enterprise identity?, link: https://www.linkedin.com/pulse/what-main-differences-between-employeepartner-iam-vs-customer-seal, icon: home }
+    - { title: Terminology and vocabulary overview, link: https://developer.okta.com/docs/concepts/iam-overview-iam-terminology/, icon: terminal }
+    - { title: OAuth and OIDC, link: https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc, icon: shield }
 ---
 
-<div class="space-y-16">
-  <div class="text-center max-w-2xl mx-auto space-y-5">
-    <h1 class="text-5xl sm:text-6xl leading-[1.15] text-sii-light-header dark:text-sii-dark-header">{{meta.title}}</h1>
-    <p class="text-lg text-sii-light-text dark:text-sii-dark-text">{{site_value}}</p>
+<section class="sii-hero-bg relative overflow-hidden">
+  <div class="absolute inset-0 sii-dotted-grid"></div>
+  <div class="relative z-20 sii-shell py-6">
+    {% include "_header.njk" %}
+  </div>
+
+  <div class="relative sii-shell py-12 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" style="margin-top: -8rem;">
+    <div class="space-y-5">
+      <span class="inline-flex items-center gap-2 text-white/70 text-[11px] font-bold uppercase tracking-widest">
+      </span>
+      <h1 class="text-5xl md:text-6xl leading-[1.05] tracking-tight text-white max-w-xl">{{meta.title}}</h1>
+      <p class="text-base leading-relaxed text-white/75 max-w-lg">{{site_value}}</p>
+      <div class="flex flex-wrap items-center gap-5 pt-1">
+        <a href="#identity-topics" class="inline-flex items-center gap-1.5 bg-white text-sii-hero-to-dark rounded-md px-3.5 py-1.5 text-xs font-semibold transition-opacity duration-150 hover:opacity-85">
+          Explore {% feather "arrow-right", { "stroke-width": 1.8, width: 13 } %}
+        </a>
+        <a href="#foundations" class="inline-flex items-center gap-1.5 text-white/80 text-xs font-medium hover:text-white transition-colors duration-200">
+          Revisit identity foundations {% feather "arrow-right", { "stroke-width": 1.8, width: 13 } %}
+        </a>
+      </div>
+      <div class="flex flex-wrap gap-4 pt-4 text-white/45 text-[10px] font-semibold uppercase tracking-wider">
+        
+      </div>
+    </div>
+
+    <div class="relative h-[300px] hidden lg:block">
+      <div class="sii-orbit" style="inset: 5% -20% -25% 5%; transform: rotate(-28deg);"></div>
+      <div class="sii-orbit" style="inset: 18% -12% 10% 2%; transform: rotate(34deg);"></div>
+      <div class="sii-orbit absolute" style="width: 245px; height: 245px; right: 40px; top: 60px;"></div>
+
+      <div class="sii-identity-node absolute left-0 top-10" style="transform: rotate(-8deg);">
+        {% feather "cpu", { "stroke-width": 1.5, width: 24, "class": "text-sii-primary dark:text-sii-primary-light" } %}
+      </div>
+      <div class="sii-identity-node absolute right-0 bottom-16" style="transform: rotate(7deg);">
+        {% feather "key", { "stroke-width": 1.5, width: 24, "class": "text-sii-primary dark:text-sii-primary-light" } %}
+      </div>
+
+      <div class="sii-code-window absolute z-[2] top-2 right-[5px] w-[min(440px,88%)] overflow-hidden">
+        <div class="sii-window-bar flex items-center gap-1.5 h-9 px-4">
+          <i class="w-1.5 h-1.5 rounded-full"></i>
+          <i class="w-1.5 h-1.5 rounded-full"></i>
+          <i class="w-1.5 h-1.5 rounded-full"></i>
+          <span class="ml-2 font-mono text-[10px]">access-policy.ts</span>
+        </div>
+        <div class="sii-code-lines px-5 py-3 font-mono text-[12px] leading-[1.6]">
+          <p><b>const</b> access = <em>await</em> okta.authorize({</p>
+          <p class="pl-7"><span>identity:</span> agent.id,</p>
+          <p class="pl-7"><span>resource:</span> <q>'production-api'</q>,</p>
+          <p class="pl-7"><span>scope:</span> [<q>'read:reports'</q>],</p>
+          <p>})</p>
+        </div>
+        <div class="sii-access-granted mx-4 mb-4 px-3 py-2 rounded-lg text-[11px]">
+          <span class="inline-grid w-5 h-5 mr-2 rounded-full place-items-center bg-green-500 text-white">&check;</span>
+          Access granted <small class="float-right opacity-70">42ms</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sii-shell space-y-14 py-12 md:py-16">
+  <div id="identity-topics" class="text-center max-w-2xl mx-auto space-y-5">
+    <span class="text-sii-primary text-[11px] font-bold uppercase tracking-widest">Developer identity resources</span>
+    <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{ topics.title }}</h2>
+    <p class="text-lg text-sii-light-text dark:text-sii-dark-text">{{ topics.subtitle }}</p>
 
     {% include "_search.njk" %}
 
-    <div class="flex flex-wrap justify-center gap-2">
+    <div class="flex flex-wrap items-center justify-center gap-2 text-sii-light-text dark:text-sii-dark-text text-sm">
+      <span>Explore:</span>
       {%- for entry in collections.all | eleventyNavigation | sort(attribute='data.order') %}
         {%- if entry.url != "/" -%}
-      <a href="{{ entry.url }}" class="bg-sii-light-muted dark:bg-sii-dark-muted text-sii-light-header dark:text-sii-dark-header rounded-full px-3 py-1.5 text-sm transition-colors duration-200 hover:bg-sii-light-accent">{{ entry.title }}</a>
+      <a href="{{ entry.url }}" class="bg-sii-light-muted dark:bg-sii-dark-muted text-sii-light-header dark:text-sii-dark-header rounded-md px-2.5 py-1 text-xs transition-colors duration-200 hover:bg-sii-primary hover:text-white">{{ entry.title }}</a>
         {%- endif -%}
       {%- endfor %}
     </div>
   </div>
 
-  <div id="identity-topics">
-    {% set topics = topics %}
-    {% include "_topics.njk" %}
-  </div>
+  {% include "_topics.njk" %}
 
-  <section class="space-y-8">
-  <div class="space-y-4">
-    <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{ foundations.title }}</h2>
-    <p class="text-lg">{{ foundations.subtitle }}</p>
-  </div>
-  <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-    {%- for item in foundations.resources -%}
-    <div class="h-full w-full p-5 flex flex-col gap-4 bg-sii-light-background border border-sii-border rounded-lg transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 dark:bg-sii-dark-background dark:border-sii-dark-border">
-      <div class="self-start bg-sii-primary p-2.5 rounded-full">
-        {% feather "lock", { "stroke": "#fbfbfb" } %}
+  <section id="foundations" class="sii-hero-bg relative overflow-hidden rounded-3xl -mx-4 xs:-mx-8 md:-mx-12 px-4 xs:px-8 md:px-12 py-12">
+    <div class="absolute inset-0 sii-dotted-grid"></div>
+    <div class="relative space-y-8">
+      <div class="space-y-4 max-w-xl">
+        <span class="text-white/60 text-[11px] font-bold uppercase tracking-widest">Identity foundations</span>
+        <h2 class="text-white text-5xl">{{ foundations.title }}</h2>
+        <p class="text-lg text-white/70">{{ foundations.subtitle }}</p>
       </div>
-      <a href="{{item.link}}" target="_blank" rel="noopener" class="grow rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
-        <h3 class="text-sii-light-header dark:text-sii-dark-header text-xl leading-snug">{{item.title}}</h3>
-      </a>
-      <a href="{{item.link}}" target="_blank" rel="noopener"
-        class="inline-flex items-center gap-1.5 border border-sii-border dark:border-sii-dark-border text-sii-light-header dark:text-sii-dark-header rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-200 hover:border-sii-primary hover:text-sii-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary mt-auto w-fit">
-        Learn more {% feather "external-link", {"stroke-width": 1.5, width: 14} %}
-      </a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {%- for item in foundations.resources -%}
+        <div class="flex flex-col rounded-xl overflow-hidden bg-white/[0.03] border border-white/10">
+          <div class="sii-guide-art sii-guide-art-{{ (loop.index % 4) + 1 }} h-24 relative flex items-center justify-center">
+            <span class="absolute right-3 top-3 text-white/55 text-[10px] font-semibold">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+            <span class="sii-orbit absolute" style="width: 64px; height: 64px;"></span>
+            <div class="relative z-10 grid w-10 h-10 rounded-lg place-items-center bg-black/25 border border-white/20">
+              {% feather item.icon or "lock", { "stroke-width": 1.5, width: 18, "class": "text-white" } %}
+            </div>
+          </div>
+          <div class="p-4 flex flex-col gap-3 grow">
+            <h3 class="text-white text-base leading-snug">{{item.title}}</h3>
+            <a href="{{item.link}}" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-1.5 border border-white/15 text-white/80 rounded-md px-2.5 py-1 text-[11px] font-medium w-fit mt-auto transition-colors duration-150 hover:bg-white hover:text-sii-hero-to-dark hover:border-white">
+              Learn more {% feather "external-link", {"stroke-width": 1.5, width: 11} %}
+            </a>
+          </div>
+        </div>
+      {%- endfor -%}
+      </div>
     </div>
-  {%- endfor -%}
-  </div>
-</section>
+  </section>
 </div>
-

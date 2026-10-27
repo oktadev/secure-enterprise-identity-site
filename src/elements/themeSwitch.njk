@@ -1,12 +1,9 @@
-<button id="theme-toggle"
-  class="w-9 h-5 py-2 ml-1.5 rounded-full bg-sii-light-accent dark:bg-sii-dark-hero-background flex items-center transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary cursor-pointer">
-  <div id="theme-toggle-switch"
-    class="flex justify-center items-center w-4 h-4 relative rounded-full transition-transform duration-300 -translate-x-1">
-    <div id="theme-toggle-light-icon" class="hidden">
-      {% feather "sun", { "stroke-width": 2, width: 12, height: 12, "stroke": "#fbfbfb" } %}
-    </div>
-    <div id="theme-toggle-dark-icon" class="hidden">
-      {% feather "moon", { "stroke-width": 2, width: 12, height: 12, "stroke": "#fbfbfb" } %}
-    </div>
-  </div>
+<button data-theme-toggle type="button" aria-label="Toggle light/dark mode"
+  class="group relative shrink-0 grid w-6 h-6 place-items-center rounded-full border border-white/15 text-white/75 transition-colors duration-200 hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white cursor-pointer">
+  <span class="grid place-items-center transition-transform duration-300 group-hover:rotate-12 dark:hidden">
+    {% feather "moon", { "stroke-width": 1.5, width: 12, height: 12 } %}
+  </span>
+  <span class="hidden place-items-center transition-transform duration-300 group-hover:rotate-12 dark:grid">
+    {% feather "sun", { "stroke-width": 1.5, width: 12, height: 12 } %}
+  </span>
 </button>

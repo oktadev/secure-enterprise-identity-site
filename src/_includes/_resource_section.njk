@@ -1,6 +1,6 @@
 {% macro resource_card(item) %}
-<div class="h-full w-full p-5 flex flex-col gap-4 bg-sii-light-background border border-sii-border rounded-lg transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 dark:bg-sii-dark-background dark:border-sii-dark-border">
-  <div class="self-start bg-sii-primary p-2.5 rounded-full">
+<div class="h-full w-full p-4 flex flex-col gap-3 bg-sii-light-background border border-sii-border rounded-lg transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 dark:bg-sii-dark-muted dark:border-sii-dark-border">
+  <div class="self-start bg-sii-primary p-2 rounded-full">
     {% switch item.icon %}
       {% case "book" %}
         {% feather "book", { "stroke": "#fbfbfb" } %}
@@ -17,27 +17,35 @@
     {% endswitch %}
   </div>
   <a href="{{item.url}}" target="_blank" rel="noopener" class="grow rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
-    <h3 class="text-sii-light-header dark:text-sii-dark-header text-xl leading-snug">{{item.text}}</h3>
+    <h3 class="text-sii-light-header dark:text-sii-dark-header text-lg leading-snug">{{item.text}}</h3>
   </a>
   <div class="flex flex-wrap gap-2 mt-auto">
     <a href="{{item.url}}" target="_blank" rel="noopener"
-      class="inline-flex items-center gap-1 whitespace-nowrap border border-sii-border dark:border-sii-dark-border text-sii-light-header dark:text-sii-dark-header rounded-full px-2.5 py-1.5 text-xs font-medium transition-colors duration-200 hover:border-sii-primary hover:text-sii-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
-      {{item.link_text}} {% feather "external-link", {"stroke-width": 1.5, width: 12} %}
+      class="inline-flex items-center gap-1.5 whitespace-nowrap border border-sii-border dark:border-sii-dark-border text-sii-light-header dark:text-sii-dark-header rounded-md px-2.5 py-1 text-[11px] font-medium transition-colors duration-150 hover:bg-sii-primary hover:border-sii-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
+      {{item.link_text}} {% feather "external-link", {"stroke-width": 1.5, width: 11} %}
     </a>
     {%- if item.secondary_url -%}
     <a href="{{item.secondary_url}}" target="_blank" rel="noopener"
-      class="inline-flex items-center gap-1 whitespace-nowrap border border-sii-border dark:border-sii-dark-border text-sii-light-header dark:text-sii-dark-header rounded-full px-2.5 py-1.5 text-xs font-medium transition-colors duration-200 hover:border-sii-primary hover:text-sii-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
-      {{item.secondary_link_text}} {% feather "external-link", {"stroke-width": 1.5, width: 12} %}
+      class="inline-flex items-center gap-1.5 whitespace-nowrap bg-sii-light-muted dark:bg-white/10 text-sii-primary dark:text-sii-primary-light rounded-md px-2.5 py-1 text-[11px] font-medium transition-opacity duration-150 hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
+      {{item.secondary_link_text}} {% feather "external-link", {"stroke-width": 1.5, width: 11} %}
     </a>
     {%- endif -%}
   </div>
 </div>
 {% endmacro %}
 
-<div class="space-y-8">
-  <div class="space-y-4">
-    <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{section.title}}</h2>
-    <p class="text-lg text-sii-light-text dark:text-sii-dark-text">{{section.subtitle}}</p>
+{% macro spec_row(item) %}
+<a href="{{item.url}}" target="_blank" rel="noopener"
+  class="flex items-center justify-between gap-3 p-5 bg-sii-light-background border border-sii-border rounded-lg text-sii-light-header dark:bg-sii-dark-muted dark:border-sii-dark-border dark:text-sii-dark-header text-sm font-medium transition-colors duration-200 hover:border-sii-primary hover:text-sii-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
+  <span>{{item.text}}</span>
+  {% feather "arrow-right", {"stroke-width": 1.5, width: 16} %}
+</a>
+{% endmacro %}
+
+<div class="space-y-6">
+  <div class="space-y-3">
+    <h2 class="text-sii-light-header dark:text-sii-dark-header text-4xl">{{section.title}}</h2>
+    <p class="text-base text-sii-light-text dark:text-sii-dark-text">{{section.subtitle}}</p>
   </div>
   {%- if section.groups -%}
   <div class="space-y-10">
@@ -46,16 +54,16 @@
       <h3 class="text-sii-light-header dark:text-sii-dark-header text-2xl">{{group.title}}</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {%- for item in group.resources -%}
-          {{ resource_card(item) }}
+          {%- if compact -%}{{ spec_row(item) }}{%- else -%}{{ resource_card(item) }}{%- endif -%}
         {%- endfor -%}
       </div>
     </div>
     {%- endfor -%}
   </div>
   {%- else -%}
-  <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+  <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 {% if not compact %}xl:grid-cols-4{% endif %} gap-4">
     {%- for item in section.resources -%}
-      {{ resource_card(item) }}
+      {%- if compact -%}{{ spec_row(item) }}{%- else -%}{{ resource_card(item) }}{%- endif -%}
     {%- endfor -%}
   </div>
   {%- endif -%}

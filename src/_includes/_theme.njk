@@ -1,46 +1,15 @@
 <script>
-  const themeColor = localStorage.getItem('theme');
+  (function () {
+    var stored = localStorage.getItem('theme');
+    var theme = (stored === 'dark' || (stored === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) ? 'dark' : 'light';
+    document.documentElement.dataset.theme = theme;
 
-  if (themeColor === 'dark' || (themeColor === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.dataset.theme = 'dark';
-  } else {
-    document.documentElement.dataset.theme = 'light';
-  }
-
-  const themeToggle = document.getElementById('theme-toggle-switch')
-  const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-  const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-  const initialTheme = document.documentElement.dataset.theme;
-
-  if (initialTheme === 'dark') {
-    themeToggleDarkIcon.classList.remove('hidden');
-    themeToggle.classList.remove('bg-sii-primary', '-translate-x-1')
-    themeToggle.classList.add('bg-sii-dark-hero-background', 'translate-x-full')
-  } else {
-    themeToggleLightIcon.classList.remove('hidden');
-    themeToggle.classList.add('bg-sii-primary', '-translate-x-1')
-    themeToggle.classList.remove('bg-sii-dark-hero-background', 'translate-x-full')
-  }
-
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  themeToggleBtn.addEventListener('click', function () {
-    let theme = document.documentElement.dataset.theme;
-
-    themeToggleDarkIcon.classList.toggle('hidden');
-    themeToggleLightIcon.classList.toggle('hidden');
-
-    if (theme === 'light') {
-      theme = 'dark';
-      document.documentElement.dataset.theme = theme;
-      themeToggle.classList.remove('bg-sii-primary', '-translate-x-1')
-      themeToggle.classList.add('bg-sii-dark-hero-background', 'translate-x-full')
-    } else {
-      theme = 'light';
-      document.documentElement.dataset.theme = theme;
-      themeToggle.classList.add('bg-sii-primary', '-translate-x-1')
-      themeToggle.classList.remove('bg-sii-dark-hero-background', 'translate-x-full')
-    }
-
-    localStorage.setItem('theme', theme);
-  });
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem('theme', next);
+      });
+    });
+  })();
 </script>
