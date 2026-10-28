@@ -21,12 +21,12 @@
   </a>
   <div class="flex flex-wrap gap-2 mt-auto">
     <a href="{{item.url}}" target="_blank" rel="noopener"
-      class="inline-flex items-center gap-1.5 whitespace-nowrap border border-sii-border dark:border-sii-dark-border text-sii-light-header dark:text-sii-dark-header rounded-md px-2.5 py-1 text-[11px] font-medium transition-colors duration-150 hover:bg-sii-primary hover:border-sii-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
+      class="inline-flex items-center gap-1.5 whitespace-nowrap border border-sii-border dark:border-sii-dark-border text-sii-light-header dark:text-sii-dark-header rounded-md px-2.5 py-1 text-[13px] font-medium transition-colors duration-150 hover:bg-sii-primary hover:border-sii-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
       {{item.link_text}} {% feather "external-link", {"stroke-width": 1.5, width: 11} %}
     </a>
     {%- if item.secondary_url -%}
     <a href="{{item.secondary_url}}" target="_blank" rel="noopener"
-      class="inline-flex items-center gap-1.5 whitespace-nowrap bg-sii-light-muted dark:bg-white/10 text-sii-primary dark:text-sii-primary-light rounded-md px-2.5 py-1 text-[11px] font-medium transition-opacity duration-150 hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
+      class="inline-flex items-center gap-1.5 whitespace-nowrap bg-sii-light-muted dark:bg-white/10 text-sii-primary dark:text-sii-primary-light rounded-md px-2.5 py-1 text-[13px] font-medium transition-opacity duration-150 hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sii-primary">
       {{item.secondary_link_text}} {% feather "external-link", {"stroke-width": 1.5, width: 11} %}
     </a>
     {%- endif -%}

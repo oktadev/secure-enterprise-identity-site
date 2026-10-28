@@ -1,5 +1,5 @@
 <div class="sii-shell mb-2">
-  <div class="-mx-4 xs:-mx-8 md:-mx-12 flex flex-col sm:flex-row justify-between items-center gap-4 bg-sii-light-muted dark:bg-sii-dark-muted rounded-xl px-6 py-4 mb-3">
+  <div class="{% if page.url == '/' %}-mx-4 xs:-mx-8 md:-mx-12 {% endif %}flex flex-col sm:flex-row justify-between items-center gap-4 bg-sii-light-muted dark:bg-sii-dark-muted rounded-xl px-6 py-4 mb-3">
     <div class="flex items-center gap-2">
       <div class="bg-sii-light-background dark:bg-sii-dark-background p-2 rounded-full animate-pulse">
         {% feather "zap", { "stroke-width": 1.5, width: 18, "stroke": "#7540ad", "fill": "#7540ad" } %}
@@ -7,13 +7,13 @@
       <p class="text-sm text-sii-light-header dark:text-sii-dark-header font-medium">See Cross App Access in action</p>
     </div>
     <a href="https://xaa.dev/" target="_blank" rel="noopener"
-      class="shrink-0 bg-sii-primary text-white rounded-md px-3 py-1.5 text-xs font-medium transition-opacity duration-200 hover:opacity-85">
+      class="shrink-0 bg-sii-primary text-white rounded-md px-3 py-1.5 text-sm font-medium transition-opacity duration-200 hover:opacity-85">
       Try it live
     </a>
   </div>
 </div>
 
-<footer class="bg-sii-light-background dark:bg-sii-dark-background border-t border-sii-border dark:border-sii-dark-border py-5 text-sii-light-text dark:text-sii-dark-text text-xs flex flex-col justify-center items-center px-4 gap-2">
+<footer class="bg-sii-light-background dark:bg-sii-dark-background border-t border-sii-border dark:border-sii-dark-border py-5 text-sii-light-text dark:text-sii-dark-text text-sm flex flex-col justify-center items-center px-4 gap-2">
   <div class="flex justify-center items-center gap-0.1">
     <span class="text-sm font-medium text-sii-light-header dark:text-sii-dark-header">Presented by</span>
     <img class="h-[24px] invert dark:invert-0" src="/img/okta_logotype.svg" alt="Okta logo" />
@@ -21,7 +21,7 @@
 
   <p>&copy; 2026 Okta, Inc. All Rights Reserved</p>
 
-  <div class="inline-flex gap-2 my-1 text-[0.7rem]">
+  <div class="inline-flex gap-2 my-1 text-sm">
     <a class="text-sii-primary hover:underline" href="https://www.okta.com/terms-of-service/">Terms of Service</a>
     <p role="separator">|</p>
     <a class="text-sii-primary hover:underline" href="https://www.okta.com/privacy-policy/">Privacy Policy</a>
@@ -29,7 +29,7 @@
     <a class="text-sii-primary hover:underline" href="mailto:dev-advocacy@okta.com">Feedback</a>
   </div>
 
-  <p class="text-center text-[0.65rem]">These materials and any recommendations within are not legal, privacy, security, compliance, or
+  <p class="text-center text-xs leading-relaxed">These materials and any recommendations within are not legal, privacy, security, compliance, or
     business advice. These materials are intended for general informational purposes only and may not reflect the most
     current security, privacy, and legal developments nor all relevant issues. You are responsible for obtaining legal,
     security, privacy, compliance, or business advice from your own lawyer or other professional advisor and should not

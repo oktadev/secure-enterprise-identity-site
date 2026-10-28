@@ -6,12 +6,12 @@
   <div class="flex items-center gap-3">
     {% include "../elements/themeSwitch.njk" %}
     {% if backLink %}
-    <a href="/" class="inline-flex items-center gap-2 border border-white/15 text-white/80 rounded-md px-2.5 py-1 text-xs hover:text-white transition-colors duration-200">
+    <a href="/" class="inline-flex items-center gap-2 border border-white/15 text-white/80 rounded-md px-2.5 py-1 text-sm hover:text-white transition-colors duration-200">
       {% feather "arrow-left", { "stroke-width": 1.5, width: 12 } %}
       Back to all concepts
     </a>
     {% else %}
-    <a href="#identity-topics" class="inline-flex items-center gap-2 text-white/80 text-xs font-medium hover:text-white transition-colors duration-200">
+    <a href="#identity-topics" class="inline-flex items-center gap-2 text-white/80 text-sm font-medium hover:text-white transition-colors duration-200">
       Identity foundations
       {% feather "arrow-right", { "stroke-width": 1.5, width: 12 } %}
     </a>
