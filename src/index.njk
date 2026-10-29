@@ -24,11 +24,11 @@ foundations:
     {% include "_header.njk" %}
   </div>
 
-  <div class="relative sii-shell py-12 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" style="margin-top: -8rem;">
+  <div class="relative sii-shell py-12 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:-mt-[8rem]">
     <div class="space-y-5">
       <span class="inline-flex items-center gap-2 text-white/70 text-[13px] font-bold uppercase tracking-widest">
       </span>
-      <h1 class="text-5xl md:text-6xl leading-[1.05] tracking-tight text-white max-w-xl">{{meta.title}}</h1>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tight text-white max-w-xl">{{meta.title}}</h1>
       <p class="text-base leading-relaxed text-white/75 max-w-lg">{{site_value}}</p>
       <div class="flex flex-wrap items-center gap-5 pt-1">
         <a href="#identity-topics" class="inline-flex items-center gap-1.5 bg-white text-sii-hero-to-dark rounded-md px-3.5 py-1.5 text-sm font-semibold transition-opacity duration-150 hover:opacity-85">
@@ -81,7 +81,7 @@ foundations:
 <div class="sii-shell space-y-14 py-12 md:py-16">
   <div id="identity-topics" class="text-center max-w-2xl mx-auto space-y-5">
     <span class="text-sii-primary text-[13px] font-bold uppercase tracking-widest">Developer identity resources</span>
-    <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{ topics.title }}</h2>
+    <h2 class="text-sii-light-header dark:text-sii-dark-header text-3xl sm:text-4xl md:text-5xl">{{ topics.title }}</h2>
     <p class="text-lg text-sii-light-text dark:text-sii-dark-text">{{ topics.subtitle }}</p>
 
     {% include "_search.njk" %}
@@ -98,11 +98,11 @@ foundations:
 
   {% include "_topics.njk" %}
 
-  <section id="foundations" class="sii-hero-bg relative overflow-hidden rounded-3xl -mx-4 xs:-mx-8 md:-mx-12 px-4 xs:px-8 md:px-12 py-12">
+  <section id="foundations" class="sii-hero-bg relative overflow-hidden rounded-3xl xl:-mx-12 px-6 sm:px-8 xl:px-12 py-10 sm:py-12">
     <div class="absolute inset-0 sii-dotted-grid"></div>
     <div class="relative space-y-8">
       <div class="space-y-4 max-w-xl">
-        <h2 class="text-white text-5xl">{{ foundations.title }}</h2>
+        <h2 class="text-white text-3xl sm:text-4xl md:text-5xl">{{ foundations.title }}</h2>
         <p class="text-lg text-white/70">{{ foundations.subtitle }}</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
