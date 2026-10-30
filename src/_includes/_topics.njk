@@ -1,23 +1,24 @@
 <section class="space-y-8">
-  <div class="space-y-4">
-    <h2 class="text-sii-light-header dark:text-sii-dark-header text-5xl">{{topics.title}}</h2>
-    <p class="text-lg">{{topics.subtitle}}</p>
-  </div>
-  <div class="mt-2 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 auto-rows-fr">
-    {%- for item in collections.topic | sort(attribute='data.order') -%}
-    <div class="max-w-md p-2 sm:p-4 flex flex-col space-y-4 bg-sii-light-background border border-sii-border rounded-md shadow-sm dark:bg-sii-dark-background">
-      <div class="p-2 sm:p-4 bg-sii-hero-background rounded-md h-16 sm:h-20 md:h-28 flex justify-center align-middle">
-        <a class="" href="{{item.page.url}}">
-          <img class="h-12 md:h-20" src="{{item.data.image}}" alt="{{item.data.imagetext}}"/>
-        </a>
-      </div>
-      <a href="{{item.page.url}}">
-        <h3 class="text-sii-light-header dark:text-sii-dark-header text-3xl">{{item.data.title}}</h3>
-      </a>
-      <p class="justify-self-start grow">{{item.data.summary}}</p>
-      {% linkButton item.page.url, "Explore" %}
-
+  <div class="flex items-end justify-between gap-6 flex-wrap">
+    <div class="space-y-2">
+      <h2 class="text-sii-light-header dark:text-sii-dark-header text-2xl sm:text-4xl">Explore the core concepts</h2>
     </div>
+  </div>
+  <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {%- for item in collections.topic | sort(attribute='data.order') -%}
+    <a href="{{item.page.url}}" class="group relative min-h-[220px] p-5 flex flex-col gap-2 bg-sii-light-background border border-sii-border rounded-xl transition-all duration-200 hover:shadow-lg hover:-translate-y-1 hover:border-sii-primary/40 dark:bg-sii-dark-muted dark:border-sii-dark-border">
+      <div class="bg-sii-light-muted dark:bg-white/10 text-sii-primary dark:text-sii-primary-light p-2.5 rounded-lg w-fit mb-2">
+        {% feather item.data.icon or "lock", { "stroke-width": 1.5, width: 22, height: 22 } %}
+      </div>
+      <span class="text-sii-primary text-xs font-bold tracking-widest uppercase">Explore</span>
+      <h3 class="text-sii-light-header dark:text-sii-dark-header text-xl">{{item.data.title}}</h3>
+      <div class="mt-auto flex items-end justify-between gap-4">
+        <p class="text-sii-light-text dark:text-sii-dark-text text-sm">{{item.data.summary}}</p>
+        <div class="shrink-0 text-sii-light-text dark:text-sii-dark-text transition-transform duration-200 group-hover:translate-x-1">
+          {% feather "arrow-right", { "stroke-width": 1.5, width: 18 } %}
+        </div>
+      </div>
+    </a>
   {%- endfor -%}
   </div>
 </section>

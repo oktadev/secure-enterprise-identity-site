@@ -1,0 +1,91 @@
+{%- set searchIndex = [] -%}
+{%- for topicPage in collections.topic | sort(attribute='data.order') -%}
+  {%- set _ = searchIndex.push({ title: topicPage.data.title, url: topicPage.page.url, category: topicPage.data.title, type: "category", hay: topicPage.data.title ~ ' ' ~ topicPage.data.summary ~ ' ' ~ topicPage.data.description }) -%}
+  {%- for sectionName in ["learn", "apply", "reference"] -%}
+    {%- set section = topicPage.data[sectionName] -%}
+    {%- if section and section.resources -%}
+      {%- for r in section.resources -%}
+        {%- set _ = searchIndex.push({ title: r.text, url: r.url, category: topicPage.data.title, type: "resource", hay: r.text ~ ' ' ~ topicPage.data.title ~ ' ' ~ section.title ~ ' ' ~ section.subtitle ~ ' ' ~ r.url }) -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+<div class="relative" data-site-search>
+  <div class="flex items-center gap-3 h-[60px] border border-sii-border dark:border-sii-dark-border rounded-xl px-5 bg-sii-light-background dark:bg-sii-dark-background shadow-[0_15px_40px_rgba(87,37,138,0.08)] transition-shadow duration-200 focus-within:border-sii-primary focus-within:shadow-[0_17px_45px_rgba(87,37,138,0.15)]">
+    {% feather "search", { "stroke-width": 1.5, width: 20, "class": "text-sii-light-text dark:text-sii-dark-text shrink-0" } %}
+    <input type="search" autocomplete="off" aria-label="Search identity concepts, standards, and guides"
+      placeholder="Search concepts and guides&hellip;"
+      class="text-sm text-sii-light-header dark:text-sii-dark-header bg-transparent outline-none text-left grow placeholder:text-sii-light-text dark:placeholder:text-sii-dark-text" />
+  </div>
+  <ul data-site-search-results
+    class="hidden absolute z-10 mt-2 w-full max-h-80 overflow-y-auto bg-sii-light-background dark:bg-sii-dark-background border border-sii-border dark:border-sii-dark-border rounded-lg shadow-lg text-left">
+  </ul>
+</div>
+
+<script>
+  (function () {
+    var searchIndex = {{ searchIndex | dump | safe }};
+    var root = document.currentScript.previousElementSibling;
+    var input = root.querySelector('input');
+    var results = root.querySelector('[data-site-search-results]');
+
+    function render(matches) {
+      results.innerHTML = '';
+      if (!matches.length) {
+        var empty = document.createElement('li');
+        empty.className = 'px-4 py-3 text-sm text-sii-light-text dark:text-sii-dark-text';
+        empty.textContent = 'No results found for “' + input.value.trim() + '”';
+        results.appendChild(empty);
+        results.classList.remove('hidden');
+        return;
+      }
+      matches.slice(0, 10).forEach(function (item) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = item.url;
+        a.className = 'block px-4 py-2 text-sm text-sii-light-header dark:text-sii-dark-header hover:bg-sii-light-muted dark:hover:bg-sii-dark-muted';
+        if (item.type === 'resource') {
+          a.target = '_blank';
+          a.rel = 'noopener';
+        }
+        a.appendChild(document.createTextNode(item.title + ' '));
+        var categorySpan = document.createElement('span');
+        categorySpan.className = 'text-sii-light-text dark:text-sii-dark-text text-xs';
+        categorySpan.textContent = '— ' + item.category;
+        a.appendChild(categorySpan);
+        li.appendChild(a);
+        results.appendChild(li);
+      });
+      results.classList.remove('hidden');
+    }
+
+    input.addEventListener('input', function () {
+      var q = input.value.trim().toLowerCase();
+      if (!q) {
+        results.classList.add('hidden');
+        return;
+      }
+      var words = q.split(/\s+/);
+      var matches = searchIndex.filter(function (item) {
+        var hay = (item.hay || item.title).toLowerCase();
+        return words.every(function (w) { return hay.indexOf(w) !== -1; });
+      });
+      matches.sort(function (a, b) {
+        function score(item) {
+          var t = item.title.toLowerCase();
+          if (t.indexOf(q) !== -1) return 0;
+          return words.every(function (w) { return t.indexOf(w) !== -1; }) ? 1 : 2;
+        }
+        return score(a) - score(b);
+      });
+      render(matches);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!root.contains(e.target)) {
+        results.classList.add('hidden');
+      }
+    });
+  })();
+</script>

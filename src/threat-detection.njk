@@ -7,25 +7,43 @@ eleventyNavigation:
   order: 2
 title: Threat protection
 summary: Safeguard apps by detecting and reacting to suspicious activity
-description: Watch for suspicious activity such unusual signon behavior, performing atypical actions, or making unexpected access control changes. Take action in your app and alert others. Or react to an existing alarm raised by another app. Protect your customers' data and their trust in your platform by proactively detecting or by reacting to threats.
+description: Watch for suspicious activity such as unusual sign-on behavior, performing atypical actions, or making unexpected access control changes. Take action in your app and alert others. Or react to an existing alarm raised by another app. Protect your customers' data and their trust in your platform by proactively detecting threats or reacting to them.
 image: /img/undraw_secure-server_lz9x.svg
 image_alt_text: An illustration of a secure server with a shield
+icon: shield
 learn:
   title: Learn about threat management
   subtitle: Protect your apps by reacting to suspicious activity using Global Token Revocation. Prevent the impact of threats by notifying your ecosystem using the Shared Signals Framework.
   resources:
+    - { text: What is Token Theft?, icon: book, link_text: Read article, url: https://www.obsidiansecurity.com/blog/what-is-token-theft-oauth-session-api-token-attacks-explained }
+    - { text: JWT Token Revocation, icon: book, link_text: Read article, url: https://gruve.ai/in/ai-security-essentials/jwt-token-revocation/ }
+    - { text: "Password spraying vs credential stuffing: why the difference matters", icon: book, link_text: Read article, url: https://delinea.com/blog/password-spraying-vs-credential-stuffing }
+    - { text: What is an MFA Fatigue Attack?, icon: book, link_text: Read article, url: https://sosafe-awareness.com/glossary/mfa-fatigue-attack/ }
+    - { text: What is a prompt injection attack?, icon: book, link_text: Read article, url: https://www.ibm.com/think/topics/prompt-injection }
+    - { text: SIEM Threat Detection, icon: book, link_text: Read article, url: https://www.strike48.com/post/siem-threat-detection }
+    - { text: What is a Security Event Token?, icon: book, link_text: Read article, url: https://nhimg.org/glossary/security-event-token/ }
     - { text: Global Token Revocation podcast, icon: video, link_text: Watch video, url: https://www.youtube.com/watch?v=2snTFRFsAs8 }
+    - { text: Shared Signals Framework, icon: book, link_text: Read article, url: https://help.okta.com/oie/en-us/content/topics/itp/shared-signals.htm, secondary_link_text: Watch video, secondary_url: https://www.youtube.com/watch?v=PfkQmwNZ6S8 }
+    - { text: OpenID Shared Signals Framework, icon: book, link_text: Read article, url: https://openid.net/specs/openid-sharedsignals-framework-1_0.html }
+    - { text: Shared Signals guide, icon: explore, link_text: Explore site, url: https://sharedsignals.guide/ }
+    - { text: Shared Signals Framework playground, icon: explore, link_text: Explore site, url: https://shared-signals.dev/ }
+    - { text: "Continuous Access Evaluation in Practice: CAEP, RISC, and Shared Signals", icon: book, link_text: Read article, url: https://iamroadmap.com/article/continuous-access-evaluation-in-practice-caep-risc-and-shared-signals }
     - { text: CAEP Transmitter, icon: explore, link_text: Explore site, url: https://caep.dev/ }
-    - { text: Shared Signals Framework podcast, icon: video, link_text: Watch video, url: https://www.youtube.com/watch?v=PfkQmwNZ6S8 }
+    - { text: OWASP API Security Top 10, icon: book, link_text: Read article, url: https://medium.com/@ogounaya/owasp-api-security-top-10-41418b647c8e }
+    - { text: NIST Incident Response Guide, icon: book, link_text: Read article, url: https://drata.com/learn/nist/incident-response-guide }
 apply:
   title: Build threat safety into your application
   subtitle: Protect your app by revoking access
   resources:
     - { text: How to Instantly Sign a User Out across All Your Apps, icon: code, link_text: Build app, url: https://developer.okta.com/blog/2024/04/30/express-universal-logout }
+    - { text: Manage Identity Threat Protection resources using Terraform, icon: code, link_text: Build app, url: https://developer.okta.com/docs/guides/terraform-manage-itp/main/ }
 reference:
   title: Read the specs
   subtitle: Get into the weeds and learn all the things
   resources:
     - { text: Global Token Revocation, icon: bookmark, link_text: Read reference, url: https://www.ietf.org/archive/id/draft-parecki-oauth-global-token-revocation-01.html }
+    - { text: OAuth 2.0 Security Best Current Practice, icon: bookmark, link_text: Read reference, url: https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics }
+    - { text: OAuth 2.0 Token Revocation, icon: bookmark, link_text: Read reference, url: https://datatracker.ietf.org/doc/html/rfc7009 }
+    - { text: OAuth 2.0 Token Introspection, icon: bookmark, link_text: Read reference, url: https://datatracker.ietf.org/doc/html/rfc7662 }
 ---
 

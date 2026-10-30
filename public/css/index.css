@@ -1,25 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Inter", Helvetica, Arial, sans-serif;
-  --color-sii-light-background: #fbfbfb;
-  --color-sii-light-header: #191919;
-  --color-sii-light-text: #686868;
-  --color-sii-dark-background: #0A0c18;
-  --color-sii-dark-header: #FFFFFF;
-  --color-sii-dark-text: #9C9C9C;
-  --color-sii-border: #e1e1e1;
-  --color-sii-primary: #644FC1;
+  --font-display: "DM Sans", Helvetica, Arial, sans-serif;
+  --font-heading: "Manrope", Helvetica, Arial, sans-serif;
+
+  --color-sii-primary: #7540ad;
+  --color-sii-primary-light: #9462c8;
+
+  --color-sii-light-background: #f8f7fb;
+  --color-sii-dark-background: #150a24;
+  --color-sii-light-header: #211a30;
+  --color-sii-dark-header: #ffffff;
+  --color-sii-light-text: #6d6678;
+  --color-sii-dark-text: #b9aabe;
+  --color-sii-border: #e4deeb;
+  --color-sii-dark-border: rgba(225, 205, 239, 0.18);
+  --color-sii-light-muted: #eee7f8;
+  --color-sii-dark-muted: rgba(255, 255, 255, 0.04);
+
   --color-sii-light-accent: #EDE9FE;
-  --color-sii-dark-accent: #977FC3;
-  --color-sii-light-hero-background: #fbfbfb;
-  --color-sii-dark-hero-background: #3D2B8E;
-  --color-sii-light-widget-background: #EDE9FE;
-  --color-sii-dark-widget-background: #4C3A9A;
-  --color-sii-dark-integration-panel-background: #4C3A9A;
-  --color-sii-light-integration-panel-text: #1F124A;
-  --color-sii-dark-integration-panel-text: #B0A1F4;
   --color-sii-hero-background: #d9d1fd;
+
+  --color-sii-hero-from-light: #cbb3e8;
+  --color-sii-hero-via-light: #9462c8;
+  --color-sii-hero-to-light: #57258a;
+  --color-sii-hero-from-dark: #180b2c;
+  --color-sii-hero-via-dark: #24103f;
+  --color-sii-hero-to-dark: #341555;
+
   --breakpoint-md: 900px;
   --breakpoint-sm: 640px;
   --breakpoint-xs: 320px;
@@ -27,4 +36,175 @@
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+h1, h2, h3, .sii-brand {
+  font-family: var(--font-heading);
+}
+
+/* Centered content shell, matching the reference's section-shell:
+   content never stretches edge-to-edge, always centers at 1120px max. */
+.sii-shell {
+  width: min(1120px, calc(100% - 48px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero / detail / guides gradient background */
+.sii-hero-bg {
+  background: radial-gradient(circle at 80% 22%, rgba(163, 105, 222, 0.34), transparent 28%),
+    radial-gradient(circle at 8% 86%, rgba(102, 45, 154, 0.4), transparent 32%),
+    linear-gradient(135deg, var(--color-sii-hero-from-dark), var(--color-sii-hero-via-dark) 55%, var(--color-sii-hero-to-dark));
+}
+
+/* Dotted-grid decorative overlay */
+.sii-dotted-grid {
+  position: absolute;
+  inset: 0;
+  content: '';
+  opacity: 0.18;
+  background-image: radial-gradient(circle, #e1c9f8 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(circle at 75% 25%, black, transparent 70%);
+  pointer-events: none;
+}
+
+/* Floating code window — always a dark IDE-style card, regardless of page theme,
+   since it sits on the purple hero gradient in both light and dark mode. */
+.sii-code-window {
+  border: 1px solid rgba(223, 193, 247, 0.22);
+  border-radius: 14px;
+  background: rgba(20, 8, 37, 0.88);
+  box-shadow: 0 35px 90px rgba(5, 0, 15, 0.46);
+  backdrop-filter: blur(15px);
+  transform: rotate(2deg);
+  animation: sii-hero-float 5.5s ease-in-out infinite;
+}
+
+@keyframes sii-hero-float {
+  0%, 100% { transform: translateY(0) rotate(2deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sii-code-window {
+    animation: none;
+  }
+}
+
+.sii-code-window .sii-window-bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  color: #7f718c;
+}
+
+.sii-code-window .sii-window-bar i {
+  background: #9e62d0;
+}
+
+.sii-code-window .sii-window-bar i:nth-child(2) { opacity: 0.65; }
+.sii-code-window .sii-window-bar i:nth-child(3) { opacity: 0.35; }
+
+.sii-code-window .sii-code-lines {
+  color: #bcb0c7;
+}
+
+.sii-code-window .sii-code-lines b { color: #cc8fff; }
+.sii-code-window .sii-code-lines em { color: #8fddda; font-style: normal; }
+.sii-code-window .sii-code-lines span { color: #e1c9f8; }
+.sii-code-window .sii-code-lines q { color: #b9d783; }
+
+.sii-code-window .sii-access-granted {
+  border: 1px solid rgba(171, 229, 180, 0.2);
+  color: #c6e8cb;
+  background: rgba(71, 130, 81, 0.12);
+}
+
+/* Orbit rings + glow dots */
+.sii-orbit {
+  position: absolute;
+  border: 1px solid rgba(87, 37, 138, 0.22);
+  border-radius: 50%;
+  pointer-events: none;
+  border-color: rgba(202, 159, 239, 0.2);
+}
+
+.sii-glow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c687ff;
+  box-shadow: 0 0 15px #c687ff;
+}
+
+.sii-identity-node {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(87, 37, 138, 0.18);
+  border-radius: 13px;
+  place-items: center;
+  background: #432063;
+  box-shadow: 0 15px 40px rgba(5, 0, 15, 0.4);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Abstract device mockup (detail-page hero graphic) */
+.sii-device-mockup {
+  position: absolute;
+  width: 260px;
+  height: 165px;
+  left: 50%;
+  top: 50%;
+  border: 8px solid #57258a;
+  border-radius: 10px;
+  background: rgba(250, 247, 255, 0.75);
+  box-shadow: 0 22px 0 -7px #2d1b41;
+  transform: translate(-50%, -50%);
+  border-color: #2d1b41;
+}
+
+.sii-device-user {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  left: 26px;
+  top: 58px;
+  border-radius: 50%;
+  background: #bea3da;
+}
+
+.sii-device-line {
+  position: absolute;
+  left: 78px;
+  height: 7px;
+  border-radius: 4px;
+  background: rgba(62, 39, 84, 0.35);
+}
+
+/* Guides/foundations card decorative art */
+.sii-guide-art {
+  position: relative;
+  overflow: hidden;
+}
+
+.sii-guide-art::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  opacity: 0.32;
+  background-image: radial-gradient(circle, #e6c9fb 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.sii-guide-art-1 {
+  background: radial-gradient(circle at 70% 35%, rgba(222, 180, 255, 0.25), transparent 28%), linear-gradient(135deg, #6b3298, #2b143f);
+}
+.sii-guide-art-2 {
+  background: radial-gradient(circle at 30% 70%, rgba(238, 202, 255, 0.24), transparent 30%), linear-gradient(135deg, #351b58, #7e4a9f);
+}
+.sii-guide-art-3 {
+  background: radial-gradient(circle at 60% 25%, rgba(236, 210, 255, 0.23), transparent 27%), linear-gradient(135deg, #4a1a6b, #1d0d31);
+}
+.sii-guide-art-4 {
+  background: radial-gradient(circle at 50% 50%, rgba(236, 210, 255, 0.23), transparent 27%), linear-gradient(135deg, #2b143f, #180b2c);
+}
 

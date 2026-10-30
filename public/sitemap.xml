@@ -2,6 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 	<loc>https://www.enterpriseidentity.dev</loc>
-	<lastmod>2025-08-01</lastmod>
+	<lastmod>2026-10-26</lastmod>
+	</url>
+	<url>
+	<loc>https://www.enterpriseidentity.dev/authentication/</loc>
+	<lastmod>2026-10-26</lastmod>
+	</url>
+	<url>
+	<loc>https://www.enterpriseidentity.dev/user-lifecycle-management/</loc>
+	<lastmod>2026-10-26</lastmod>
+	</url>
+	<url>
+	<loc>https://www.enterpriseidentity.dev/threat-detection/</loc>
+	<lastmod>2026-10-26</lastmod>
+	</url>
+	<url>
+	<loc>https://www.enterpriseidentity.dev/ai/</loc>
+	<lastmod>2026-10-26</lastmod>
 	</url>
 </urlset>
