@@ -4,12 +4,12 @@ layout: base
 
 <section class="sii-hero-bg relative overflow-hidden">
   <div class="absolute inset-0 sii-dotted-grid"></div>
-  <div class="relative z-20 sii-shell py-6">
+  <div class="relative z-20 sii-shell pt-6 pb-0 md:pb-6">
     {% set backLink = true %}
     {% include "_header.njk" %}
   </div>
 
-  <div class="relative sii-shell py-10 md:py-14 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:-mt-[8rem]">
+  <div class="relative sii-shell pt-6 pb-10 md:py-14 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:-mt-[8rem]">
     <div class="space-y-5">
       <h1 class="text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tight text-white">{{ title }}</h1>
       <p class="text-base leading-relaxed text-white/75 max-w-lg">{{ description }}</p>
